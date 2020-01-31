@@ -5,6 +5,13 @@
  */
 package finalproject.finalproject;
 
+import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kuervo
@@ -33,9 +40,9 @@ public class SignInWindow extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
@@ -86,22 +93,27 @@ public class SignInWindow extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel2.setText("Username");
 
-        jTextField1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        username.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel3.setText("Password");
 
-        jPasswordField1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        password.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,9 +126,9 @@ public class SignInWindow extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1)
+                            .addComponent(username)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)))
+                            .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -129,11 +141,11 @@ public class SignInWindow extends javax.swing.JFrame {
                 .addContainerGap(159, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(117, 117, 117))
@@ -154,10 +166,40 @@ public class SignInWindow extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // TODO add your handling code here:
+            
+            String usernameEntered = this.username.getText();
+            String passwordEntered = this.password.getText();
+            
+            if (GetUser(usernameEntered, passwordEntered)) {
+                AdminMenu x = new AdminMenu();
+                this.setVisible(false);
+                x.setVisible(true);
+            }
+            else{
+                System.out.println("Try Again");
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            //AdminMenu x = new AdminMenu();
+            //x.setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(SignInWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -184,8 +226,77 @@ public class SignInWindow extends javax.swing.JFrame {
         //--------------------------------------------------------------------------------------------------------------------
         /* Main Starts HERE */
         //--------------------------------------------------------------------------------------------------------------------
+
         SignInWindow signIn = new SignInWindow();
         signIn.setVisible(true);
+        
+        getConnection();
+        
+    }
+    
+    public static Connection getConnection()throws Exception{
+        
+        try {
+            String driver = "com.mysql.jdbc.Driver";
+            String url = "jdbc:mysql://remotemysql.com:3306/IrzI7vdDJz";
+            String username = "IrzI7vdDJz";
+            String password = "TooHnw7IeH";
+            Class.forName(driver);
+            
+            Connection conn = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected");
+            
+            return conn;
+        } catch (Exception e) {
+            System.out.println("An error has occured");
+            System.out.println(e);
+        }
+        
+        return null;
+    }
+    
+    public static boolean GetUser(String usernameEntered, String passwordEntered) throws Exception{
+    
+        User testUser;
+        
+        
+        Statement stmt = null;
+        Connection conn = getConnection();
+        String query = "SELECT * FROM USERR WHERE Email='"+usernameEntered+"'";
+    try {
+        boolean valid = false;
+        stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            String email = rs.getString("Email");
+            String userPassword = rs.getString("Pass");
+            String type = rs.getString("Type");
+            String firstName = rs.getString("F_Name");
+            String lastName = rs.getString("L_Name");
+            String phone = rs.getString("Phone");
+            String address = rs.getString("Address");
+            
+            testUser = new User(email, userPassword, type);
+            
+            
+            if (testUser.Email.equals(usernameEntered)&& testUser.Pass.equals(passwordEntered)) {
+                //JOptionPane.showMessageDialog(this, "Log In Succesfull");
+                //System.out.println("Log In Succesfull!");
+                valid = true;
+            }
+            else{
+                //System.out.println("Please try again");
+                valid = false;
+            }
+            
+            return valid;
+        }
+    } catch (SQLException e ) {
+        System.err.println(e);
+    } finally {
+        if (stmt != null) { stmt.close(); }
+    }
+        return false;
         
     }
 
@@ -198,7 +309,7 @@ public class SignInWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
