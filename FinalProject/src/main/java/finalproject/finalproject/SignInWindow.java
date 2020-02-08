@@ -44,6 +44,7 @@ public class SignInWindow extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        loginError = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -115,6 +116,11 @@ public class SignInWindow extends javax.swing.JFrame {
             }
         });
 
+        loginError.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        loginError.setForeground(new java.awt.Color(255, 0, 0));
+        loginError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loginError.setText("Username and/or Password do not Match");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -131,7 +137,10 @@ public class SignInWindow extends javax.swing.JFrame {
                             .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(105, 105, 105)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(loginError, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -148,7 +157,9 @@ public class SignInWindow extends javax.swing.JFrame {
                 .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117))
+                .addGap(18, 18, 18)
+                .addComponent(loginError, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -185,6 +196,7 @@ public class SignInWindow extends javax.swing.JFrame {
             }
             else{
                 System.out.println("Try Again");
+                this.loginError.setVisible(true);
             }
             
             
@@ -235,6 +247,9 @@ public class SignInWindow extends javax.swing.JFrame {
         SignInWindow signIn = new SignInWindow();
         signIn.setVisible(true);
         
+        //Hiding loginError
+        signIn.loginError.setVisible(false);
+        
         // We don't really need to call this function here ... just checking that batabase is connected
         Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
         myDatabase.getConnection();
@@ -250,6 +265,7 @@ public class SignInWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel loginError;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
