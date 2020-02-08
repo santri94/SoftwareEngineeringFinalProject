@@ -173,10 +173,15 @@ public class SignInWindow extends javax.swing.JFrame {
             String usernameEntered = this.username.getText();
             String passwordEntered = this.password.getText();
             
-            if (GetUser(usernameEntered, passwordEntered)) {
+            Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+            
+            User currentUser = myDatabase.GetUser(usernameEntered, passwordEntered);
+            
+            if (currentUser != null) {
                 AdminMenu x = new AdminMenu();
                 this.setVisible(false);
                 x.setVisible(true);
+                x.setUSer(currentUser);
             }
             else{
                 System.out.println("Try Again");
@@ -230,76 +235,12 @@ public class SignInWindow extends javax.swing.JFrame {
         SignInWindow signIn = new SignInWindow();
         signIn.setVisible(true);
         
-        getConnection();
+        // We don't really need to call this function here ... just checking that batabase is connected
+        Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+        myDatabase.getConnection();
         
     }
-    
-    public static Connection getConnection()throws Exception{
-        
-        try {
-            String driver = "com.mysql.jdbc.Driver";
-            String url = "jdbc:mysql://remotemysql.com:3306/IrzI7vdDJz";
-            String username = "IrzI7vdDJz";
-            String password = "TooHnw7IeH";
-            Class.forName(driver);
-            
-            Connection conn = DriverManager.getConnection(url, username, password);
-            System.out.println("Connected");
-            
-            return conn;
-        } catch (Exception e) {
-            System.out.println("An error has occured");
-            System.out.println(e);
-        }
-        
-        return null;
-    }
-    
-    public static boolean GetUser(String usernameEntered, String passwordEntered) throws Exception{
-    
-        User testUser;
-        
-        
-        Statement stmt = null;
-        Connection conn = getConnection();
-        String query = "SELECT * FROM USERR WHERE Email='"+usernameEntered+"'";
-    try {
-        boolean valid = false;
-        stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
-        while (rs.next()) {
-            String email = rs.getString("Email");
-            String userPassword = rs.getString("Pass");
-            String type = rs.getString("Type");
-            String firstName = rs.getString("F_Name");
-            String lastName = rs.getString("L_Name");
-            String phone = rs.getString("Phone");
-            String address = rs.getString("Address");
-            
-            testUser = new User(email, userPassword, type);
-            
-            
-            if (testUser.Email.equals(usernameEntered)&& testUser.Pass.equals(passwordEntered)) {
-                //JOptionPane.showMessageDialog(this, "Log In Succesfull");
-                //System.out.println("Log In Succesfull!");
-                valid = true;
-            }
-            else{
-                //System.out.println("Please try again");
-                valid = false;
-            }
-            
-            return valid;
-        }
-    } catch (SQLException e ) {
-        System.err.println(e);
-    } finally {
-        if (stmt != null) { stmt.close(); }
-    }
-        return false;
-        
-    }
-
+       
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
