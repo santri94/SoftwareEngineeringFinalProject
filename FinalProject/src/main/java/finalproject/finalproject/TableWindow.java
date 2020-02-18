@@ -30,7 +30,6 @@ public class TableWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         T1 = new javax.swing.JPanel();
-        order = new javax.swing.JButton();
         T3 = new javax.swing.JPanel();
         T4 = new javax.swing.JPanel();
         T2 = new javax.swing.JPanel();
@@ -46,34 +45,28 @@ public class TableWindow extends javax.swing.JFrame {
         SetUsedT4 = new javax.swing.JButton();
         SetFreeT4 = new javax.swing.JButton();
         SetDirtyT4 = new javax.swing.JButton();
+        OrderT1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         T1.setBackground(new java.awt.Color(255, 255, 255));
         T1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
-        order.setText("Order");
-        order.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                orderActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout T1Layout = new javax.swing.GroupLayout(T1);
         T1.setLayout(T1Layout);
         T1Layout.setHorizontalGroup(
             T1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(T1Layout.createSequentialGroup()
-                .addComponent(order, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 59, Short.MAX_VALUE))
+            .addGap(0, 134, Short.MAX_VALUE)
         );
         T1Layout.setVerticalGroup(
             T1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T1Layout.createSequentialGroup()
-                .addGap(0, 55, Short.MAX_VALUE)
-                .addComponent(order, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 84, Short.MAX_VALUE)
         );
 
         getContentPane().add(T1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 90));
@@ -126,105 +119,161 @@ public class TableWindow extends javax.swing.JFrame {
 
         getContentPane().add(T2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 140, 90));
 
-        SetFreeT1.setText("Set Free");
+        SetFreeT1.setText("Ready");
         SetFreeT1.setPreferredSize(new java.awt.Dimension(98, 29));
         SetFreeT1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetFreeT1ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetFreeT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 80, -1));
+        getContentPane().add(SetFreeT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 90, -1));
 
-        SetDirtyT1.setText("Set Dirty");
+        SetDirtyT1.setText("Occupied");
         SetDirtyT1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetDirtyT1ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetDirtyT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 80, -1));
+        getContentPane().add(SetDirtyT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 90, -1));
 
-        SetUsedT1.setText("Set Used");
+        SetUsedT1.setText("Dirty");
         SetUsedT1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetUsedT1ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetUsedT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 80, 30));
+        getContentPane().add(SetUsedT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 90, 30));
 
-        SetFreeT2.setText("Set Free");
+        SetFreeT2.setText("Ready");
         SetFreeT2.setPreferredSize(new java.awt.Dimension(98, 29));
         SetFreeT2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetFreeT2ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetFreeT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 80, -1));
+        getContentPane().add(SetFreeT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 90, -1));
 
-        SetDirtyT2.setText("Set Dirty");
+        SetDirtyT2.setText("Occupied");
         SetDirtyT2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetDirtyT2ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetDirtyT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 80, -1));
+        getContentPane().add(SetDirtyT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 90, -1));
 
-        SetUsedT2.setText("Set Used");
+        SetUsedT2.setText("Dirty");
         SetUsedT2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetUsedT2ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetUsedT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 80, 30));
+        getContentPane().add(SetUsedT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 90, 30));
 
-        SetFreeT3.setText("Set Free");
+        SetFreeT3.setText("Ready");
         SetFreeT3.setPreferredSize(new java.awt.Dimension(98, 29));
         SetFreeT3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetFreeT3ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetFreeT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 80, -1));
+        getContentPane().add(SetFreeT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 90, -1));
 
-        SetDirtyT3.setText("Set Dirty");
+        SetDirtyT3.setText("Occupied");
         SetDirtyT3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetDirtyT3ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetDirtyT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 80, -1));
+        getContentPane().add(SetDirtyT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 90, -1));
 
-        SetUsedT3.setText("Set Used");
+        SetUsedT3.setText("Dirty");
         SetUsedT3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetUsedT3ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetUsedT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 80, 30));
+        getContentPane().add(SetUsedT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 90, 30));
 
-        SetUsedT4.setText("Set Used");
+        SetUsedT4.setText("Dirty");
         SetUsedT4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetUsedT4ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetUsedT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 80, 30));
+        getContentPane().add(SetUsedT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 90, 30));
 
-        SetFreeT4.setText("Set Free");
+        SetFreeT4.setText("Ready");
         SetFreeT4.setPreferredSize(new java.awt.Dimension(98, 29));
         SetFreeT4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetFreeT4ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetFreeT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 80, -1));
+        getContentPane().add(SetFreeT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 90, -1));
 
-        SetDirtyT4.setText("Set Dirty");
+        SetDirtyT4.setText("Occupied");
         SetDirtyT4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetDirtyT4ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetDirtyT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 80, -1));
+        getContentPane().add(SetDirtyT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 90, -1));
+
+        OrderT1.setText("Order");
+        OrderT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrderT1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OrderT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 80, -1));
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel1.setText("HOST");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jLabel1)
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 180, 60));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel2.setText("Kitchen");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel2)
+                .addContainerGap(64, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 110, 160));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -292,11 +341,11 @@ public class TableWindow extends javax.swing.JFrame {
         T4.setBackground(Color.red);
     }//GEN-LAST:event_SetUsedT4ActionPerformed
 
-    private void orderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderActionPerformed
+    private void OrderT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT1ActionPerformed
         // TODO add your handling code here:
       Food food = new Food();
       food.setVisible(true);
-    }//GEN-LAST:event_orderActionPerformed
+    }//GEN-LAST:event_OrderT1ActionPerformed
 
 
     /**
@@ -304,7 +353,7 @@ public class TableWindow extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         
-        
+       
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -337,6 +386,7 @@ public class TableWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton OrderT1;
     private javax.swing.JButton SetDirtyT1;
     private javax.swing.JButton SetDirtyT2;
     private javax.swing.JButton SetDirtyT3;
@@ -353,6 +403,9 @@ public class TableWindow extends javax.swing.JFrame {
     private javax.swing.JPanel T2;
     private javax.swing.JPanel T3;
     private javax.swing.JPanel T4;
-    private javax.swing.JButton order;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

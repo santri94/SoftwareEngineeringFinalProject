@@ -68,7 +68,7 @@ public class Food extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -693,7 +693,7 @@ public class Food extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       System.exit(0);
+       dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBoxBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxBurgerActionPerformed
