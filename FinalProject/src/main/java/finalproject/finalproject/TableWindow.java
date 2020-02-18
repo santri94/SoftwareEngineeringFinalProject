@@ -30,6 +30,7 @@ public class TableWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         T1 = new javax.swing.JPanel();
+        order = new javax.swing.JButton();
         T3 = new javax.swing.JPanel();
         T4 = new javax.swing.JPanel();
         T2 = new javax.swing.JPanel();
@@ -53,15 +54,26 @@ public class TableWindow extends javax.swing.JFrame {
         T1.setBackground(new java.awt.Color(255, 255, 255));
         T1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
+        order.setText("Order");
+        order.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout T1Layout = new javax.swing.GroupLayout(T1);
         T1.setLayout(T1Layout);
         T1Layout.setHorizontalGroup(
             T1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
+            .addGroup(T1Layout.createSequentialGroup()
+                .addComponent(order, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 59, Short.MAX_VALUE))
         );
         T1Layout.setVerticalGroup(
             T1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 84, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T1Layout.createSequentialGroup()
+                .addGap(0, 55, Short.MAX_VALUE)
+                .addComponent(order, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(T1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 90));
@@ -280,6 +292,12 @@ public class TableWindow extends javax.swing.JFrame {
         T4.setBackground(Color.red);
     }//GEN-LAST:event_SetUsedT4ActionPerformed
 
+    private void orderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderActionPerformed
+        // TODO add your handling code here:
+      Food food = new Food();
+      food.setVisible(true);
+    }//GEN-LAST:event_orderActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -335,5 +353,6 @@ public class TableWindow extends javax.swing.JFrame {
     private javax.swing.JPanel T2;
     private javax.swing.JPanel T3;
     private javax.swing.JPanel T4;
+    private javax.swing.JButton order;
     // End of variables declaration//GEN-END:variables
 }
