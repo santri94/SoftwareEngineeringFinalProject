@@ -57,6 +57,11 @@ public class AdminMenu extends javax.swing.JFrame {
         });
 
         jButton2.setText("Check Employee Hrs");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Log Out");
 
@@ -68,6 +73,11 @@ public class AdminMenu extends javax.swing.JFrame {
         });
 
         jButton5.setText("Sales");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Popular Items");
 
@@ -140,6 +150,19 @@ public class AdminMenu extends javax.swing.JFrame {
         ModifyProfiles userx = new ModifyProfiles();
         userx.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        EmployeeHrs userx = new EmployeeHrs();
+        userx.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       
+        Sales userx = new Sales();
+        userx.setVisible(true);
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

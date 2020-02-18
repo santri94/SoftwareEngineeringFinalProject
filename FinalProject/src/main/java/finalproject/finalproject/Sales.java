@@ -9,12 +9,12 @@ package finalproject.finalproject;
  *
  * @author shilpanpatel
  */
-public class sales extends javax.swing.JFrame {
+public class Sales extends javax.swing.JFrame {
 
     /**
      * Creates new form sales
      */
-    public sales() {
+    public Sales() {
         initComponents();
     }
 
