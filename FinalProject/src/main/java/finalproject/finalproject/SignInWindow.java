@@ -196,10 +196,21 @@ public class SignInWindow extends javax.swing.JFrame {
             User currentUser = myDatabase.GetUser(usernameEntered, passwordEntered);
             
             if (currentUser != null) {
-                AdminMenu x = new AdminMenu();
-                this.setVisible(false);
-                x.setVisible(true);
-                x.setUSer(currentUser);
+                if(currentUser.Type.equals("admin")){
+                    AdminMenu x = new AdminMenu();
+                    this.setVisible(false);
+                    x.setVisible(true);
+                    x.setUSer(currentUser);
+                }
+                else if(currentUser.Type.equals("waiter")){
+                    TableWindow x = new TableWindow();
+                    this.setVisible(false);
+                    x.setVisible(true);
+//                    this.setVisible(true);
+                    
+                }
+                
+                
             }
             else{
                 System.out.println("Try Again");
