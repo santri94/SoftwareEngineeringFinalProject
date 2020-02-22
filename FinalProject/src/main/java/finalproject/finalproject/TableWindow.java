@@ -369,6 +369,7 @@ public class TableWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         Food food = new Food();
         food.setVisible(true);
+        
     }//GEN-LAST:event_OrderT1ActionPerformed
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
@@ -383,18 +384,21 @@ public class TableWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         Food food = new Food();
         food.setVisible(true);
+        
     }//GEN-LAST:event_OrderT2ActionPerformed
 
     private void OrderT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT3ActionPerformed
         // TODO add your handling code here:
         Food food = new Food();
         food.setVisible(true);
+        
     }//GEN-LAST:event_OrderT3ActionPerformed
 
     private void OrderT4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT4ActionPerformed
         // TODO add your handling code here:
         Food food = new Food();
         food.setVisible(true);
+        
     }//GEN-LAST:event_OrderT4ActionPerformed
     
     public void setUpView(User currentUser) {
