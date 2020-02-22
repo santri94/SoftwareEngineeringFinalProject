@@ -51,6 +51,9 @@ public class TableWindow extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         LogOut = new javax.swing.JButton();
         waiterName = new javax.swing.JLabel();
+        OrderT2 = new javax.swing.JButton();
+        OrderT3 = new javax.swing.JButton();
+        OrderT4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tables");
@@ -108,7 +111,7 @@ public class TableWindow extends javax.swing.JFrame {
             .addGap(0, 84, Short.MAX_VALUE)
         );
 
-        getContentPane().add(T4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 140, 90));
+        getContentPane().add(T4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 140, 90));
 
         T2.setBackground(new java.awt.Color(255, 255, 255));
         T2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -124,7 +127,7 @@ public class TableWindow extends javax.swing.JFrame {
             .addGap(0, 84, Short.MAX_VALUE)
         );
 
-        getContentPane().add(T2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 140, 90));
+        getContentPane().add(T2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 140, 90));
 
         SetFreeT1.setText("Ready");
         SetFreeT1.setPreferredSize(new java.awt.Dimension(98, 29));
@@ -158,7 +161,7 @@ public class TableWindow extends javax.swing.JFrame {
                 SetFreeT2ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetFreeT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 90, -1));
+        getContentPane().add(SetFreeT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 90, -1));
 
         SetDirtyT2.setText("Occupied");
         SetDirtyT2.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +169,7 @@ public class TableWindow extends javax.swing.JFrame {
                 SetDirtyT2ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetDirtyT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 90, -1));
+        getContentPane().add(SetDirtyT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 90, -1));
 
         SetUsedT2.setText("Dirty");
         SetUsedT2.addActionListener(new java.awt.event.ActionListener() {
@@ -174,7 +177,7 @@ public class TableWindow extends javax.swing.JFrame {
                 SetUsedT2ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetUsedT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 90, 30));
+        getContentPane().add(SetUsedT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 90, 30));
 
         SetFreeT3.setText("Ready");
         SetFreeT3.setPreferredSize(new java.awt.Dimension(98, 29));
@@ -207,7 +210,7 @@ public class TableWindow extends javax.swing.JFrame {
                 SetUsedT4ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetUsedT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 90, 30));
+        getContentPane().add(SetUsedT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 90, 30));
 
         SetFreeT4.setText("Ready");
         SetFreeT4.setPreferredSize(new java.awt.Dimension(98, 29));
@@ -216,7 +219,7 @@ public class TableWindow extends javax.swing.JFrame {
                 SetFreeT4ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetFreeT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 90, -1));
+        getContentPane().add(SetFreeT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 90, -1));
 
         SetDirtyT4.setText("Occupied");
         SetDirtyT4.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +227,7 @@ public class TableWindow extends javax.swing.JFrame {
                 SetDirtyT4ActionPerformed(evt);
             }
         });
-        getContentPane().add(SetDirtyT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 90, -1));
+        getContentPane().add(SetDirtyT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 90, -1));
 
         OrderT1.setText("Order");
         OrderT1.addActionListener(new java.awt.event.ActionListener() {
@@ -232,7 +235,7 @@ public class TableWindow extends javax.swing.JFrame {
                 OrderT1ActionPerformed(evt);
             }
         });
-        getContentPane().add(OrderT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 80, -1));
+        getContentPane().add(OrderT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 80, 30));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -270,6 +273,30 @@ public class TableWindow extends javax.swing.JFrame {
         waiterName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         waiterName.setText("Hi Waiter");
         getContentPane().add(waiterName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, -1, 32));
+
+        OrderT2.setText("Order");
+        OrderT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrderT2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OrderT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 80, 30));
+
+        OrderT3.setText("Order");
+        OrderT3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrderT3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OrderT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 80, 30));
+
+        OrderT4.setText("Order");
+        OrderT4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrderT4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OrderT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 80, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -340,8 +367,8 @@ public class TableWindow extends javax.swing.JFrame {
 
     private void OrderT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT1ActionPerformed
         // TODO add your handling code here:
-      Food food = new Food();
-      food.setVisible(true);
+        Food food = new Food();
+        food.setVisible(true);
     }//GEN-LAST:event_OrderT1ActionPerformed
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
@@ -351,6 +378,24 @@ public class TableWindow extends javax.swing.JFrame {
         this.setVisible(false);
 
     }//GEN-LAST:event_LogOutActionPerformed
+
+    private void OrderT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT2ActionPerformed
+        // TODO add your handling code here:
+        Food food = new Food();
+        food.setVisible(true);
+    }//GEN-LAST:event_OrderT2ActionPerformed
+
+    private void OrderT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT3ActionPerformed
+        // TODO add your handling code here:
+        Food food = new Food();
+        food.setVisible(true);
+    }//GEN-LAST:event_OrderT3ActionPerformed
+
+    private void OrderT4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT4ActionPerformed
+        // TODO add your handling code here:
+        Food food = new Food();
+        food.setVisible(true);
+    }//GEN-LAST:event_OrderT4ActionPerformed
     
     public void setUpView(User currentUser) {
         // In this method we want to check that user is either waiter or busboy
@@ -380,9 +425,21 @@ public class TableWindow extends javax.swing.JFrame {
             SetDirtyT4.setVisible(false);
             SetUsedT4.setVisible(false);
             //-----------------------------------------------------------------
-            //                  Tables Orders BUTTONS
+            //                  Tables Orders BUTTONS 
+            //                 available on GREEN ONLY
             //-----------------------------------------------------------------
-            OrderT1.setVisible(true);
+            if (T1.getBackground().equals(Color.green)) {
+                OrderT1.setVisible(true);                
+            }
+            if (T2.getBackground().equals(Color.green)) {
+                OrderT2.setVisible(true);                
+            }
+            if (T3.getBackground().equals(Color.green)) {
+                OrderT3.setVisible(true);                
+            }
+            if (T4.getBackground().equals(Color.green)) {
+                OrderT4.setVisible(true);                
+            }
             //-----------------------------------------------------------------
             
         }
@@ -411,6 +468,9 @@ public class TableWindow extends javax.swing.JFrame {
             //                  Tables Orders BUTTONS
             //-----------------------------------------------------------------
             OrderT1.setVisible(false);
+            OrderT2.setVisible(false);
+            OrderT3.setVisible(false);
+            OrderT4.setVisible(false);
             //-----------------------------------------------------------------
             
         }
@@ -424,6 +484,9 @@ public class TableWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogOut;
     private javax.swing.JButton OrderT1;
+    private javax.swing.JButton OrderT2;
+    private javax.swing.JButton OrderT3;
+    private javax.swing.JButton OrderT4;
     private javax.swing.JButton SetDirtyT1;
     private javax.swing.JButton SetDirtyT2;
     private javax.swing.JButton SetDirtyT3;
