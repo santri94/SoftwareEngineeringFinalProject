@@ -141,7 +141,7 @@ public class SignInWindow extends javax.swing.JFrame {
                                         .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                                         .addComponent(username)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(31, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
@@ -195,19 +195,19 @@ public class SignInWindow extends javax.swing.JFrame {
             
             User currentUser = myDatabase.GetUser(usernameEntered, passwordEntered);
             
+
+            
             if (currentUser != null) {
                 if(currentUser.Type.equals("admin")){
+                    clearUserAndPassword();
                     AdminMenu x = new AdminMenu();
-                    this.setVisible(false);
                     x.setVisible(true);
                     x.setUSer(currentUser);
                 }
                 else if(currentUser.Type.equals("waiter")){
+                    clearUserAndPassword();
                     TableWindow x = new TableWindow();
-                    this.setVisible(false);
-                    x.setVisible(true);
-//                    this.setVisible(true);
-                    
+                    x.setVisible(true);                    
                 }
                 
                 
@@ -272,6 +272,16 @@ public class SignInWindow extends javax.swing.JFrame {
         Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
         myDatabase.getConnection();
         
+    }
+    
+    public void clearUserAndPassword(){
+            //----------------------------------------------------------------------------------------------------------------------
+            //                              Clear username and password fields and reset error message
+            //----------------------------------------------------------------------------------------------------------------------
+            this.username.setText("");
+            this.password.setText("");
+            this.loginError.setVisible(false);
+            //----------------------------------------------------------------------------------------------------------------------
     }
        
     // Variables declaration - do not modify//GEN-BEGIN:variables

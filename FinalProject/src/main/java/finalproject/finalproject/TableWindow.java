@@ -16,6 +16,7 @@ public class TableWindow extends javax.swing.JFrame {
     /**
      * Creates new form TableWindow
      */
+    public boolean isOpen;
     public TableWindow() {
         initComponents();
     }
@@ -53,7 +54,13 @@ public class TableWindow extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 500));
+        setTitle("Tables");
+        setAlwaysOnTop(true);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocationByPlatform(true);
+        setPreferredSize(new java.awt.Dimension(925, 600));
+        setResizable(false);
+        setSize(new java.awt.Dimension(925, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         T1.setBackground(new java.awt.Color(255, 255, 255));
@@ -246,11 +253,11 @@ public class TableWindow extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 180, 60));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 180, 60));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -271,7 +278,7 @@ public class TableWindow extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(jLabel2)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 110, 160));
@@ -282,9 +289,10 @@ public class TableWindow extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 360, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 500, 80, 40));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SetFreeT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetFreeT1ActionPerformed
@@ -358,11 +366,9 @@ public class TableWindow extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        //When logout just dispose() this window, we won't hide main window
         dispose();
-        SignInWindow x = new SignInWindow();
-        this.setVisible(false);
-        x.setVisible(true);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
