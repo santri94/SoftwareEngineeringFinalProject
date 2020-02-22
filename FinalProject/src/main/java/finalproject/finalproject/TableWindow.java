@@ -47,11 +47,10 @@ public class TableWindow extends javax.swing.JFrame {
         SetFreeT4 = new javax.swing.JButton();
         SetDirtyT4 = new javax.swing.JButton();
         OrderT1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        waiterName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tables");
@@ -235,30 +234,6 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(OrderT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 80, -1));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel1.setText("HOST");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel1)
-                .addContainerGap(69, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 180, 60));
-
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
@@ -290,6 +265,11 @@ public class TableWindow extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 500, 80, 40));
+
+        waiterName.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        waiterName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        waiterName.setText("Hi Waiter");
+        getContentPane().add(waiterName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, -1, 32));
 
         pack();
         setLocationRelativeTo(null);
@@ -370,7 +350,10 @@ public class TableWindow extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    public void setUSerName(User currentUser) {
+        this.waiterName.setText("Hi "+currentUser.F_Name);        
+    }
 
     /**
      * @param args the command line arguments
@@ -396,9 +379,8 @@ public class TableWindow extends javax.swing.JFrame {
     private javax.swing.JPanel T3;
     private javax.swing.JPanel T4;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel waiterName;
     // End of variables declaration//GEN-END:variables
 }

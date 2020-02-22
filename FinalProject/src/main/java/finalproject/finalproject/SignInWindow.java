@@ -207,7 +207,18 @@ public class SignInWindow extends javax.swing.JFrame {
                 else if(currentUser.Type.equals("waiter")){
                     clearUserAndPassword();
                     TableWindow x = new TableWindow();
-                    x.setVisible(true);                    
+                    x.setVisible(true);
+                    x.setUSerName(currentUser);
+                }
+                else if(currentUser.Type.equals("busboy")){
+                    clearUserAndPassword();
+                    //TableWindow x = new TableWindow();
+                    //x.setVisible(true);                    
+                }
+                else if(currentUser.Type.equals("kitchen")){
+                    clearUserAndPassword();
+                    //TableWindow x = new TableWindow();
+                    //x.setVisible(true);                    
                 }
                 
                 
