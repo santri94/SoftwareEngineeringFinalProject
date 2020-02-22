@@ -49,7 +49,7 @@ public class TableWindow extends javax.swing.JFrame {
         OrderT1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        LogOut = new javax.swing.JButton();
         waiterName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -258,13 +258,13 @@ public class TableWindow extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 110, 160));
 
-        jButton1.setText("Log out");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        LogOut.setText("Log out");
+        LogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                LogOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 500, 80, 40));
+        getContentPane().add(LogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 500, 80, 40));
 
         waiterName.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         waiterName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -344,15 +344,76 @@ public class TableWindow extends javax.swing.JFrame {
       food.setVisible(true);
     }//GEN-LAST:event_OrderT1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        //When logout just dispose() this window, we won't hide main window
-        dispose();
+    private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
+        //We want to hide this window, not close it, because it is also used by other waiters and busboys
+        //We can save changes to the DB at the end when admin closes the program.
+        //We really want to keep the program running the whole time and admin is the one that ends the program.
+        this.setVisible(false);
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_LogOutActionPerformed
     
-    public void setUSerName(User currentUser) {
-        this.waiterName.setText("Hi "+currentUser.F_Name);        
+    public void setUpView(User currentUser) {
+        // In this method we want to check that user is either waiter or busboy
+        // Then set up the window according to user type
+        
+        // Setting Up Name
+        this.waiterName.setText("Hi "+currentUser.F_Name);
+        
+        // Setting Up View for waiter - CANNOT edit table status
+        if (currentUser.Type.equals("waiter")) {
+            //-----------------------------------------------------------------
+            //          Tables Status
+            //-----------------------------------------------------------------
+            SetFreeT1.setVisible(false);
+            SetDirtyT1.setVisible(false);
+            SetUsedT1.setVisible(false);
+
+            SetFreeT2.setVisible(false);
+            SetDirtyT2.setVisible(false);
+            SetUsedT2.setVisible(false);
+
+            SetFreeT3.setVisible(false);
+            SetDirtyT3.setVisible(false);
+            SetUsedT3.setVisible(false);
+
+            SetFreeT4.setVisible(false);
+            SetDirtyT4.setVisible(false);
+            SetUsedT4.setVisible(false);
+            //-----------------------------------------------------------------
+            //                  Tables Orders BUTTONS
+            //-----------------------------------------------------------------
+            OrderT1.setVisible(true);
+            //-----------------------------------------------------------------
+            
+        }
+        // busboy can see buttons to edit table status, but cannot take orders
+        else if (currentUser.Type.equals("busboy")) {
+            //-----------------------------------------------------------------
+            //          Tables Status
+            //-----------------------------------------------------------------
+            SetFreeT1.setVisible(true);
+            SetDirtyT1.setVisible(true);
+            SetUsedT1.setVisible(true);
+
+            SetFreeT2.setVisible(true);
+            SetDirtyT2.setVisible(true);
+            SetUsedT2.setVisible(true);
+
+            SetFreeT3.setVisible(true);
+            SetDirtyT3.setVisible(true);
+            SetUsedT3.setVisible(true);
+
+            SetFreeT4.setVisible(true);
+            SetDirtyT4.setVisible(true);
+            SetUsedT4.setVisible(true);
+            //-----------------------------------------------------------------
+            //-----------------------------------------------------------------
+            //                  Tables Orders BUTTONS
+            //-----------------------------------------------------------------
+            OrderT1.setVisible(false);
+            //-----------------------------------------------------------------
+            
+        }
     }
 
     /**
@@ -361,6 +422,7 @@ public class TableWindow extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton LogOut;
     private javax.swing.JButton OrderT1;
     private javax.swing.JButton SetDirtyT1;
     private javax.swing.JButton SetDirtyT2;
@@ -378,7 +440,6 @@ public class TableWindow extends javax.swing.JFrame {
     private javax.swing.JPanel T2;
     private javax.swing.JPanel T3;
     private javax.swing.JPanel T4;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel waiterName;

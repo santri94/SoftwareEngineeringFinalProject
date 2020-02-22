@@ -24,6 +24,12 @@ public class SignInWindow extends javax.swing.JFrame {
     public SignInWindow() {
         initComponents();
     }
+    
+    //----------------------------------------------------------------------------------------------------------------
+    //                  We would only use one table window for now
+    //----------------------------------------------------------------------------------------------------------------
+    TableWindow tables = new TableWindow();
+    //----------------------------------------------------------------------------------------------------------------
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -197,6 +203,9 @@ public class SignInWindow extends javax.swing.JFrame {
             
 
             
+            
+
+            
             if (currentUser != null) {
                 if(currentUser.Type.equals("admin")){
                     clearUserAndPassword();
@@ -206,12 +215,13 @@ public class SignInWindow extends javax.swing.JFrame {
                 }
                 else if(currentUser.Type.equals("waiter")){
                     clearUserAndPassword();
-                    TableWindow x = new TableWindow();
-                    x.setVisible(true);
-                    x.setUSerName(currentUser);
+                    tables.setVisible(true);
+                    tables.setUpView(currentUser);
                 }
                 else if(currentUser.Type.equals("busboy")){
                     clearUserAndPassword();
+                    tables.setVisible(true);
+                    tables.setUpView(currentUser);
                     //TableWindow x = new TableWindow();
                     //x.setVisible(true);                    
                 }
