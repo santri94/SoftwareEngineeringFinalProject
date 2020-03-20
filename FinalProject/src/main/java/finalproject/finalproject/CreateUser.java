@@ -5,6 +5,10 @@
  */
 package finalproject.finalproject;
 
+import java.awt.Component;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author shilpanpatel
@@ -263,9 +267,20 @@ public class CreateUser extends javax.swing.JFrame {
         String Phone = this.Phone.getText().toString();
         String Address = this.Address.getText().toString();
         //------------------------------------------------------------------------
+        // make sure that email is not empty Email.getText() == "" create dialog 
+        //  
+            if  (Email.equals("")){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Please enter an email");
+            }
+            //
             if (Pass.equals(CPass)) {
                 Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
                 myDatabase.RegisterUser(Email, Pass, Type, F_Name, L_Name, Phone, Address);
+                //reg successful
                 dispose();
             }
             else{
