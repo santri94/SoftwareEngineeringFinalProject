@@ -164,7 +164,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        
-        Sales userx = new Sales();
+        SalesAnalysis userx = new SalesAnalysis();
         userx.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed

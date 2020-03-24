@@ -337,7 +337,10 @@ public class CreateUser extends javax.swing.JFrame {
                 Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
                 myDatabase.RegisterUser(Email, Pass, Type, F_Name, L_Name, Phone, Address);
                 //
-            //if  (.equals()){
+                //_____________________________________________
+                //HEY SANTI, I NEED HELP DOWN HERE FOR SUCCESSFULL REGISTRATION.
+                
+            //if  (myDatabase.equals()){
                 JFrame f = new JFrame();
                 f.setAlwaysOnTop(rootPaneCheckingEnabled);
                 //create dialog
