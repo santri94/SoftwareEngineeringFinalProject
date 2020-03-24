@@ -274,13 +274,78 @@ public class CreateUser extends javax.swing.JFrame {
                 f.setAlwaysOnTop(rootPaneCheckingEnabled);
                 //create dialog
                 JOptionPane.showMessageDialog(f,
-                "Please enter an email");
+                "Please enter an Email");
+            }
+            //
+            if  (Pass.equals("")){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Please enter your Password");
+            }
+            //
+            if  (CPass.equals("")){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Password doesn't match ");
+            }
+            //
+            if  (Type.equals("")){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Please select correct Type");
+            }
+            //
+            if  (F_Name.equals("")){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Please enter your First Name");
+            }
+            //
+            if  (L_Name.equals("")){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Please enter your Last Name");
+            }
+            //
+            if  (Phone.equals("")){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Please enter valid Phone number");
+            }
+            //
+            if  (Address.equals("")){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Please enter Address");
             }
             //
             if (Pass.equals(CPass)) {
                 Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
                 myDatabase.RegisterUser(Email, Pass, Type, F_Name, L_Name, Phone, Address);
-                //reg successful
+                //
+                //_____________________________________________
+                //HEY SANTI, I NEED HELP DOWN HERE FOR SUCCESSFULL REGISTRATION.
+                
+            //if  (myDatabase.equals()){
+                JFrame f = new JFrame();
+                f.setAlwaysOnTop(rootPaneCheckingEnabled);
+                //create dialog
+                JOptionPane.showMessageDialog(f,
+                "Regestration Successfull");
                 dispose();
             }
             else{
