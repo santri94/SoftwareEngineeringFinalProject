@@ -579,8 +579,6 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     /**
      * @param args the command line arguments
      */
-<<<<<<< HEAD
-=======
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -613,7 +611,6 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
     }
->>>>>>> a6017a78cf4532cb71225a5f76ad92eb836cfd93
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Appetizer;
