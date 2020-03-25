@@ -258,107 +258,71 @@ public class CreateUser extends javax.swing.JFrame {
         //------------------------------------------------------------------------
         //              Get our data from CreateUser window
         //------------------------------------------------------------------------
-        String Email = this.Email.getText().toString();
-        String Pass = this.Password.getText().toString();
-        String CPass = this.ConfirmPassword.getText().toString();
-        String Type = this.Type.getText().toString();
-        String F_Name = this.FirstName.getText().toString();
-        String L_Name = this.LastName.getText().toString();
-        String Phone = this.Phone.getText().toString();
-        String Address = this.Address.getText().toString();
+        String email = this.Email.getText();
+        String pass = this.Password.getText();
+        String cPass = this.ConfirmPassword.getText();
+        String type = this.Type.getText();
+        String f_Name = this.FirstName.getText();
+        String l_Name = this.LastName.getText();
+        String phone = this.Phone.getText();
+        String address = this.Address.getText();
+        
         //------------------------------------------------------------------------
         // make sure that email is not empty Email.getText() == "" create dialog 
-        //  
-            if  (Email.equals("")){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Please enter an Email");
+        //
+            if (f_Name.equals("")) {
+                JFrame tmp = new JFrame();
+                tmp.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(tmp, "Please enter First Name");
             }
-            //
-            if  (Pass.equals("")){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Please enter your Password");
+            else if (l_Name.equals("")) {
+                JFrame tmp = new JFrame();
+                tmp.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(tmp, "Please enter Last Name");
             }
-            //
-            if  (CPass.equals("")){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Password doesn't match ");
+            else if (email.equals("")) {
+                JFrame tmp = new JFrame();
+                tmp.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(tmp, "Please enter Email");
             }
-            //
-            if  (Type.equals("")){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Please select correct Type");
+            else if (type.equals("")) {
+                JFrame tmp = new JFrame();
+                tmp.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(tmp, "Please enter profile type");
             }
-            //
-            if  (F_Name.equals("")){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Please enter your First Name");
+            else if (pass.equals("")) {
+                JFrame tmp = new JFrame();
+                tmp.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(tmp, "Please enter Password");
             }
-            //
-            if  (L_Name.equals("")){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Please enter your Last Name");
+            else if (cPass.equals("")) {
+                JFrame tmp = new JFrame();
+                tmp.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(tmp, "Please enter Password Confirmation");
             }
-            //
-            if  (Phone.equals("")){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Please enter valid Phone number");
-            }
-            //
-            if  (Address.equals("")){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Please enter Address");
-            }
-            //
-            if (Pass.equals(CPass)) {
-                Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
-                myDatabase.RegisterUser(Email, Pass, Type, F_Name, L_Name, Phone, Address);
-                //
-                //_____________________________________________
-                //HEY SANTI, I NEED HELP DOWN HERE FOR SUCCESSFULL REGISTRATION.
-                
-            //if  (myDatabase.equals()){
-                JFrame f = new JFrame();
-                f.setAlwaysOnTop(rootPaneCheckingEnabled);
-                //create dialog
-                JOptionPane.showMessageDialog(f,
-                "Regestration Successfull");
-                dispose();
+            else if (!(pass.equals(cPass))) {
+                JFrame tmp = new JFrame();
+                tmp.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(tmp, "Passwords DO NOT Match");
             }
             else{
-                System.out.println("Wrong Password");
+                Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+                myDatabase.RegisterUser(email, pass, type, f_Name, l_Name, phone, address);
+                
+                //Confirmation pop up
+                JFrame tmp = new JFrame();
+                tmp.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(tmp, "Registration SUCCESSFUL");
+                
+                dispose();
             }
-        
-        
-        //print successful message
+            
         
        
         } catch (Exception e) {
             System.err.println(e);
         }
+        
         
 
         
