@@ -19,6 +19,7 @@ public class TableWindow extends javax.swing.JFrame {
     public boolean isOpen;
     public TableWindow() {
         initComponents();
+        SetTablesReady();
     }
 
     /**
@@ -57,7 +58,6 @@ public class TableWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tables");
-        setAlwaysOnTop(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
         setPreferredSize(new java.awt.Dimension(925, 600));
@@ -367,7 +367,7 @@ public class TableWindow extends javax.swing.JFrame {
 
     private void OrderT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT1ActionPerformed
         // TODO add your handling code here:
-        Food food = new Food();
+        FoodCategories food = new FoodCategories();
         food.setVisible(true);
         
     }//GEN-LAST:event_OrderT1ActionPerformed
@@ -382,21 +382,21 @@ public class TableWindow extends javax.swing.JFrame {
 
     private void OrderT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT2ActionPerformed
         // TODO add your handling code here:
-        Food food = new Food();
+        FoodCategories food = new FoodCategories();
         food.setVisible(true);
         
     }//GEN-LAST:event_OrderT2ActionPerformed
 
     private void OrderT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT3ActionPerformed
         // TODO add your handling code here:
-        Food food = new Food();
+        FoodCategories food = new FoodCategories();
         food.setVisible(true);
         
     }//GEN-LAST:event_OrderT3ActionPerformed
 
     private void OrderT4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT4ActionPerformed
         // TODO add your handling code here:
-        Food food = new Food();
+        FoodCategories food = new FoodCategories();
         food.setVisible(true);
         
     }//GEN-LAST:event_OrderT4ActionPerformed
@@ -511,4 +511,12 @@ public class TableWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel waiterName;
     // End of variables declaration//GEN-END:variables
+
+    public void SetTablesReady() {
+        //when program is initialize all tables should be set to ready
+        T1.setBackground(Color.green);
+        T2.setBackground(Color.green);
+        T3.setBackground(Color.green);
+        T4.setBackground(Color.green);
+    }
 }

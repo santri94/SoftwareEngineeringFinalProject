@@ -56,7 +56,6 @@ public class SignInWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sign In");
-        setAlwaysOnTop(true);
         setLocationByPlatform(true);
         setPreferredSize(new java.awt.Dimension(600, 500));
         setResizable(false);
