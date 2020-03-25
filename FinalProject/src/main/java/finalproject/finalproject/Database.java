@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -83,6 +83,20 @@ public class Database {
 
                 }
             
+            public void RegisterUser(String email, String password, String type, String firstName, String lastName, String phone, String address ) throws Exception{
+                try {
+                    Statement stmt = null;
+                    Connection conn = getConnection();
+                    
+                    String query = "INSERT INTO USERR(Email, Pass, Type, F_Name, L_Name, Phone, Address) VALUES ('"+email+"','"+password+"','"+type+"','"+firstName+"','"+lastName+"','"+phone+"','"+address+"')";
+                    stmt = conn.createStatement();
+                    stmt.executeUpdate(query);
+                    
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                
+            }
             
             
         
