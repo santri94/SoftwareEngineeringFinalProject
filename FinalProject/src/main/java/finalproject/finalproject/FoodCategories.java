@@ -132,7 +132,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Appetizer.setBackground(new java.awt.Color(255, 255, 255));
+        Appetizer.setBackground(new java.awt.Color(255, 153, 51));
         Appetizer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Appetizer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -168,7 +168,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         getContentPane().add(Appetizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 130, -1));
 
-        MainDish.setBackground(new java.awt.Color(255, 255, 255));
+        MainDish.setBackground(new java.awt.Color(255, 153, 51));
         MainDish.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         MainDish.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -204,7 +204,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         getContentPane().add(MainDish, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 130, 90));
 
-        Dessert.setBackground(new java.awt.Color(255, 255, 255));
+        Dessert.setBackground(new java.awt.Color(255, 153, 51));
         Dessert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Dessert.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -240,7 +240,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         getContentPane().add(Dessert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, 90));
 
-        Drinks.setBackground(new java.awt.Color(255, 255, 255));
+        Drinks.setBackground(new java.awt.Color(255, 153, 51));
         Drinks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Drinks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -284,10 +284,11 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         getContentPane().add(Drinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 90));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("MENU");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, -1));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -313,7 +314,13 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             jTable1.getColumnModel().getColumn(3).setPreferredWidth(32);
         }
 
+<<<<<<< HEAD
         jButton1.setText("Remove");
+=======
+        jButton1.setBackground(new java.awt.Color(51, 51, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Remove Order");
+>>>>>>> 6dcf81cc45bd69103c5f44489bbb3e5252a45ec0
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
