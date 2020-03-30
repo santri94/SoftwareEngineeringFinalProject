@@ -60,17 +60,17 @@ public class CreateUser extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setForeground(new java.awt.Color(204, 255, 255));
 
-        jLabel1.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("   First Name");
 
-        jLabel2.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("   Last Name");
 
-        jButton1.setBackground(new java.awt.Color(102, 255, 102));
-        jButton1.setForeground(new java.awt.Color(255, 0, 255));
+        jButton1.setBackground(new java.awt.Color(51, 51, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Register");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,10 +78,8 @@ public class CreateUser extends javax.swing.JFrame {
             }
         });
 
-        Phone.setBackground(new java.awt.Color(204, 204, 255));
         Phone.setForeground(new java.awt.Color(255, 0, 255));
 
-        FirstName.setBackground(new java.awt.Color(204, 204, 255));
         FirstName.setForeground(new java.awt.Color(51, 51, 51));
         FirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,44 +87,38 @@ public class CreateUser extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("   Type");
 
-        Type.setBackground(new java.awt.Color(204, 204, 255));
         Type.setForeground(new java.awt.Color(255, 0, 255));
 
-        jLabel4.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText(" Password");
 
-        jLabel5.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("   Address");
 
-        City.setBackground(new java.awt.Color(204, 204, 255));
         City.setForeground(new java.awt.Color(255, 0, 255));
 
-        Address.setBackground(new java.awt.Color(204, 204, 255));
         Address.setForeground(new java.awt.Color(255, 0, 255));
 
         jLabel6.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel6.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Zip Code");
 
-        jLabel7.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("  City");
 
-        ZipCode.setBackground(new java.awt.Color(204, 204, 255));
         ZipCode.setForeground(new java.awt.Color(255, 0, 255));
 
-        State.setBackground(new java.awt.Color(204, 204, 255));
         State.setForeground(new java.awt.Color(255, 0, 255));
 
-        jLabel10.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("   Phone");
 
-        jLabel11.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("   Email");
 
-        LastName.setBackground(new java.awt.Color(204, 204, 255));
         LastName.setForeground(new java.awt.Color(255, 0, 255));
         LastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +126,6 @@ public class CreateUser extends javax.swing.JFrame {
             }
         });
 
-        Email.setBackground(new java.awt.Color(204, 204, 255));
         Email.setForeground(new java.awt.Color(255, 0, 255));
         Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,16 +133,14 @@ public class CreateUser extends javax.swing.JFrame {
             }
         });
 
-        Password.setBackground(new java.awt.Color(204, 204, 255));
         Password.setForeground(new java.awt.Color(255, 0, 255));
 
-        jLabel12.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText(" Confirm Password");
 
-        jLabel8.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("   State");
 
-        ConfirmPassword.setBackground(new java.awt.Color(204, 204, 255));
         ConfirmPassword.setForeground(new java.awt.Color(255, 0, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -272,9 +261,10 @@ public class CreateUser extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

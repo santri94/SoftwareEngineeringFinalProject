@@ -44,6 +44,8 @@ public class AdminMenu extends javax.swing.JFrame {
         setName("AdminMenu"); // NOI18N
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setForeground(new java.awt.Color(255, 102, 204));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         user_Name.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
@@ -70,6 +72,7 @@ public class AdminMenu extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Create Account");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
