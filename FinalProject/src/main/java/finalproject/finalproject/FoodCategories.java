@@ -24,16 +24,40 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
      */
     public FoodCategories() {
         initComponents();
-        Salad.addMouseListener(this);
-        Soup.addMouseListener(this);
-        Pizza.addMouseListener(this);
-        Chicken.addMouseListener(this);
-        Cookie.addMouseListener(this);
-        Soda.addMouseListener(this);
+        BonelessWings.addMouseListener(this);
+        OnionRings.addMouseListener(this);
+        Mozzarella.addMouseListener(this);
+        Tacos.addMouseListener(this);
+        Pretzels.addMouseListener(this);
+        Spinach.addMouseListener(this);
+        Meatball.addMouseListener(this);
+        C_Alfredo.addMouseListener(this);
+        S_Alfredo.addMouseListener(this);
+        Penne.addMouseListener(this);
+        MacNCheese.addMouseListener(this);
+        Carbonara.addMouseListener(this);
+        S_TopSirloin.addMouseListener(this);
+        E_TopSirloin.addMouseListener(this);
+        ShrimpSirloin.addMouseListener(this);
+        Riblet.addMouseListener(this);
+        Bourbon.addMouseListener(this);
+        DoubleRibs.addMouseListener(this);
+        Lemonade.addMouseListener(this);
+        OrangeJuice.addMouseListener(this);
+        SoftDrinks.addMouseListener(this);
+        Sundae.addMouseListener(this);
+        CheeseCake.addMouseListener(this);
+        Brownie.addMouseListener(this);
+        
+        
         
     }
     
     DefaultTableModel model = new DefaultTableModel();
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +77,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         jLabel3 = new javax.swing.JLabel();
         Drinks = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -60,15 +85,33 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         AppetizerPanel = new javax.swing.JPanel();
-        Salad = new javax.swing.JLabel();
-        Soup = new javax.swing.JLabel();
-        MainDishPanel = new javax.swing.JPanel();
-        Pizza = new javax.swing.JLabel();
-        Chicken = new javax.swing.JLabel();
-        DessertPanel = new javax.swing.JPanel();
-        Cookie = new javax.swing.JLabel();
+        BonelessWings = new javax.swing.JLabel();
+        OnionRings = new javax.swing.JLabel();
+        Mozzarella = new javax.swing.JLabel();
+        Tacos = new javax.swing.JLabel();
+        Pretzels = new javax.swing.JLabel();
+        Spinach = new javax.swing.JLabel();
+        PastaPanel = new javax.swing.JPanel();
+        Meatball = new javax.swing.JLabel();
+        C_Alfredo = new javax.swing.JLabel();
+        S_Alfredo = new javax.swing.JLabel();
+        Penne = new javax.swing.JLabel();
+        MacNCheese = new javax.swing.JLabel();
+        Carbonara = new javax.swing.JLabel();
+        SteaksPanel = new javax.swing.JPanel();
+        S_TopSirloin = new javax.swing.JLabel();
+        E_TopSirloin = new javax.swing.JLabel();
+        ShrimpSirloin = new javax.swing.JLabel();
+        Riblet = new javax.swing.JLabel();
+        Bourbon = new javax.swing.JLabel();
+        DoubleRibs = new javax.swing.JLabel();
         DrinksPanel = new javax.swing.JPanel();
-        Soda = new javax.swing.JLabel();
+        SoftDrinks = new javax.swing.JLabel();
+        Lemonade = new javax.swing.JLabel();
+        OrangeJuice = new javax.swing.JLabel();
+        CheeseCake = new javax.swing.JLabel();
+        Brownie = new javax.swing.JLabel();
+        Sundae = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -112,7 +155,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             AppetizerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AppetizerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         AppetizerLayout.setVerticalGroup(
@@ -123,7 +166,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Appetizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, -1));
+        getContentPane().add(Appetizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 130, -1));
 
         MainDish.setBackground(new java.awt.Color(255, 255, 255));
         MainDish.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -140,7 +183,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         });
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel2.setText("MainDish");
+        jLabel2.setText("Pasta");
 
         javax.swing.GroupLayout MainDishLayout = new javax.swing.GroupLayout(MainDish);
         MainDish.setLayout(MainDishLayout);
@@ -149,7 +192,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(MainDishLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         MainDishLayout.setVerticalGroup(
             MainDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +202,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addGap(24, 24, 24))
         );
 
-        getContentPane().add(MainDish, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 150, 90));
+        getContentPane().add(MainDish, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 130, 90));
 
         Dessert.setBackground(new java.awt.Color(255, 255, 255));
         Dessert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -176,7 +219,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         });
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel3.setText("Dessert");
+        jLabel3.setText("Steaks");
 
         javax.swing.GroupLayout DessertLayout = new javax.swing.GroupLayout(Dessert);
         Dessert.setLayout(DessertLayout);
@@ -185,7 +228,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(DessertLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         DessertLayout.setVerticalGroup(
             DessertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +238,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addGap(26, 26, 26))
         );
 
-        getContentPane().add(Dessert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 150, 90));
+        getContentPane().add(Dessert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, 90));
 
         Drinks.setBackground(new java.awt.Color(255, 255, 255));
         Drinks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -212,7 +255,10 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         });
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel4.setText("Drinks");
+        jLabel4.setText("Dessert&");
+
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel6.setText("Drinks");
 
         javax.swing.GroupLayout DrinksLayout = new javax.swing.GroupLayout(Drinks);
         Drinks.setLayout(DrinksLayout);
@@ -220,18 +266,22 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         DrinksLayout.setVerticalGroup(
             DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap()
                 .addComponent(jLabel4)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Drinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 150, 90));
+        getContentPane().add(Drinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 90));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         jLabel5.setText("MENU");
@@ -250,27 +300,20 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
         });
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(80);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(5);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(18);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(32);
         }
 
-        jButton1.setText("Remove Order");
+        jButton1.setText("Remove");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -282,9 +325,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         AppetizerPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        Salad.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Salad.setText("Salad");
-        Salad.addMouseListener(new java.awt.event.MouseAdapter() {
+        BonelessWings.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        BonelessWings.setText("Boneless Wings");
+        BonelessWings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -293,9 +336,53 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Soup.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Soup.setText("Soup");
-        Soup.addMouseListener(new java.awt.event.MouseAdapter() {
+        OnionRings.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        OnionRings.setText("Onion Rings");
+        OnionRings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Mozzarella.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Mozzarella.setText("Mozzarella Sticks");
+        Mozzarella.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Tacos.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Tacos.setText("Chicken Tacos");
+        Tacos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Pretzels.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Pretzels.setText("Prestzels + Cheese Dip");
+        Pretzels.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Spinach.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Spinach.setText("Spinach + Artichoke Dip");
+        Spinach.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -309,29 +396,41 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         AppetizerPanelLayout.setHorizontalGroup(
             AppetizerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AppetizerPanelLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(20, 20, 20)
                 .addGroup(AppetizerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Salad)
-                    .addComponent(Soup))
-                .addContainerGap(149, Short.MAX_VALUE))
+                    .addComponent(Spinach)
+                    .addComponent(Pretzels)
+                    .addComponent(Mozzarella)
+                    .addComponent(OnionRings, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BonelessWings)
+                    .addComponent(Tacos))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         AppetizerPanelLayout.setVerticalGroup(
             AppetizerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AppetizerPanelLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(Salad)
+                .addGap(31, 31, 31)
+                .addComponent(BonelessWings)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(OnionRings, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Mozzarella)
                 .addGap(18, 18, 18)
-                .addComponent(Soup)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addComponent(Tacos)
+                .addGap(18, 18, 18)
+                .addComponent(Pretzels)
+                .addGap(18, 18, 18)
+                .addComponent(Spinach)
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         jPanel6.add(AppetizerPanel, "card2");
 
-        MainDishPanel.setBackground(new java.awt.Color(255, 255, 255));
+        PastaPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        Pizza.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Pizza.setText("Pizza");
-        Pizza.addMouseListener(new java.awt.event.MouseAdapter() {
+        Meatball.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Meatball.setText("Meatball & Spaghetti");
+        Meatball.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -340,9 +439,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Chicken.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Chicken.setText("Chicken");
-        Chicken.addMouseListener(new java.awt.event.MouseAdapter() {
+        C_Alfredo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        C_Alfredo.setText("Chicken Alfredo");
+        C_Alfredo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -351,34 +450,90 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        javax.swing.GroupLayout MainDishPanelLayout = new javax.swing.GroupLayout(MainDishPanel);
-        MainDishPanel.setLayout(MainDishPanelLayout);
-        MainDishPanelLayout.setHorizontalGroup(
-            MainDishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainDishPanelLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(MainDishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Chicken)
-                    .addComponent(Pizza))
-                .addContainerGap(127, Short.MAX_VALUE))
+        S_Alfredo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        S_Alfredo.setText("Shrimp Alfredo");
+        S_Alfredo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Penne.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Penne.setText("Cheese Chicken Penne");
+        Penne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        MacNCheese.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        MacNCheese.setText("Mac&Cheese");
+        MacNCheese.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Carbonara.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Carbonara.setText("Carbonara");
+        Carbonara.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PastaPanelLayout = new javax.swing.GroupLayout(PastaPanel);
+        PastaPanel.setLayout(PastaPanelLayout);
+        PastaPanelLayout.setHorizontalGroup(
+            PastaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PastaPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(PastaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Carbonara)
+                    .addComponent(C_Alfredo)
+                    .addComponent(Meatball)
+                    .addComponent(S_Alfredo)
+                    .addComponent(Penne)
+                    .addComponent(MacNCheese))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
-        MainDishPanelLayout.setVerticalGroup(
-            MainDishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainDishPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(Pizza)
+        PastaPanelLayout.setVerticalGroup(
+            PastaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PastaPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Meatball)
                 .addGap(18, 18, 18)
-                .addComponent(Chicken)
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addComponent(C_Alfredo)
+                .addGap(18, 18, 18)
+                .addComponent(S_Alfredo)
+                .addGap(18, 18, 18)
+                .addComponent(Penne)
+                .addGap(18, 18, 18)
+                .addComponent(MacNCheese)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Carbonara)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
-        jPanel6.add(MainDishPanel, "card3");
+        jPanel6.add(PastaPanel, "card3");
 
-        DessertPanel.setBackground(new java.awt.Color(255, 255, 255));
+        SteaksPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        Cookie.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Cookie.setText("Cookie");
-        Cookie.addMouseListener(new java.awt.event.MouseAdapter() {
+        S_TopSirloin.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        S_TopSirloin.setText("6 OZ. Top Sirloin");
+        S_TopSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -387,30 +542,156 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        javax.swing.GroupLayout DessertPanelLayout = new javax.swing.GroupLayout(DessertPanel);
-        DessertPanel.setLayout(DessertPanelLayout);
-        DessertPanelLayout.setHorizontalGroup(
-            DessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DessertPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(Cookie)
-                .addContainerGap(134, Short.MAX_VALUE))
+        E_TopSirloin.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        E_TopSirloin.setText("8 OZ. Top Sirloin");
+        E_TopSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        ShrimpSirloin.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        ShrimpSirloin.setText("Shrimp & Parmesan Sirloin");
+        ShrimpSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Riblet.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Riblet.setText("Riblet Platter");
+        Riblet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Bourbon.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Bourbon.setText("Bourbon Street Steak");
+        Bourbon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        DoubleRibs.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        DoubleRibs.setText("Double-Glazed Ribs");
+        DoubleRibs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SteaksPanelLayout = new javax.swing.GroupLayout(SteaksPanel);
+        SteaksPanel.setLayout(SteaksPanelLayout);
+        SteaksPanelLayout.setHorizontalGroup(
+            SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SteaksPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DoubleRibs)
+                    .addComponent(E_TopSirloin)
+                    .addComponent(S_TopSirloin)
+                    .addComponent(ShrimpSirloin)
+                    .addComponent(Riblet)
+                    .addComponent(Bourbon))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
-        DessertPanelLayout.setVerticalGroup(
-            DessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DessertPanelLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(Cookie)
-                .addContainerGap(309, Short.MAX_VALUE))
+        SteaksPanelLayout.setVerticalGroup(
+            SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SteaksPanelLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(S_TopSirloin)
+                .addGap(18, 18, 18)
+                .addComponent(E_TopSirloin)
+                .addGap(18, 18, 18)
+                .addComponent(ShrimpSirloin)
+                .addGap(18, 18, 18)
+                .addComponent(Riblet)
+                .addGap(18, 18, 18)
+                .addComponent(Bourbon)
+                .addGap(18, 18, 18)
+                .addComponent(DoubleRibs)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
-        jPanel6.add(DessertPanel, "card4");
+        jPanel6.add(SteaksPanel, "card4");
 
         DrinksPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        Soda.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Soda.setText("Soda");
-        Soda.addMouseListener(new java.awt.event.MouseAdapter() {
+        SoftDrinks.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        SoftDrinks.setText("Soft Drinks");
+        SoftDrinks.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Lemonade.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Lemonade.setText("Lemonade");
+        Lemonade.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        OrangeJuice.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        OrangeJuice.setText("Orange Juice");
+        OrangeJuice.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        CheeseCake.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        CheeseCake.setText("Slice Cheese Cake");
+        CheeseCake.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Brownie.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Brownie.setText("Blue Ribbon Brownie");
+        Brownie.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Sundae.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Sundae.setText("Chocolate Chip Sundae");
+        Sundae.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -424,16 +705,36 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         DrinksPanelLayout.setHorizontalGroup(
             DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksPanelLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(Soda)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Sundae)
+                    .addComponent(CheeseCake)
+                    .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(OrangeJuice)
+                        .addGroup(DrinksPanelLayout.createSequentialGroup()
+                            .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(SoftDrinks)
+                                .addComponent(Lemonade))
+                            .addGap(8, 8, 8)))
+                    .addComponent(Brownie))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         DrinksPanelLayout.setVerticalGroup(
             DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksPanelLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(Soda)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(SoftDrinks)
+                .addGap(18, 18, 18)
+                .addComponent(Lemonade)
+                .addGap(18, 18, 18)
+                .addComponent(OrangeJuice)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CheeseCake)
+                .addGap(32, 32, 32)
+                .addComponent(Brownie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Sundae)
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         jPanel6.add(DrinksPanel, "card5");
@@ -443,28 +744,26 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(162, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(137, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(200, 200, 200))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(179, 179, 179))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(339, 339, 339)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1070, 520));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1070, 530));
 
         pack();
         setLocationRelativeTo(null);
@@ -474,26 +773,26 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         // TODO add your handling code here:
         if(evt.getSource()==Appetizer){
             AppetizerPanel.setVisible(true);
-            MainDishPanel.setVisible(false);
-            DessertPanel.setVisible(false);
+            PastaPanel.setVisible(false);
+            SteaksPanel.setVisible(false);
             DrinksPanel.setVisible(false);
         }
         if(evt.getSource()==MainDish){
             AppetizerPanel.setVisible(false);
-            MainDishPanel.setVisible(true);
-            DessertPanel.setVisible(false);
+            PastaPanel.setVisible(true);
+            SteaksPanel.setVisible(false);
             DrinksPanel.setVisible(false);
         }
         if(evt.getSource()==Dessert){
             AppetizerPanel.setVisible(false);
-            MainDishPanel.setVisible(false);
-            DessertPanel.setVisible(true);
+            PastaPanel.setVisible(false);
+            SteaksPanel.setVisible(true);
             DrinksPanel.setVisible(false);
         }
         if(evt.getSource()==Drinks){
             AppetizerPanel.setVisible(false);
-            MainDishPanel.setVisible(false);
-            DessertPanel.setVisible(false);
+            PastaPanel.setVisible(false);
+            SteaksPanel.setVisible(false);
             DrinksPanel.setVisible(true);
         }
     }//GEN-LAST:event_MouseClicked
@@ -539,44 +838,85 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     }
     
     private void menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseEntered
-         if(evt.getSource()==Salad){
-            Salad.setForeground(new Color(80,80,80));
+         if(evt.getSource()==BonelessWings){
+            BonelessWings.setForeground(new Color(80,80,80));
         }
-         if(evt.getSource()==Soup){
-            Soup.setForeground(new Color(80,80,80));
+         if(evt.getSource()==OnionRings){
+            OnionRings.setForeground(new Color(80,80,80));
         }
-        if(evt.getSource()==Pizza){
-            Pizza.setForeground(new Color(80,80,80));
+          if(evt.getSource()==Mozzarella){
+            Mozzarella.setForeground(new Color(80,80,80));
         }
-        if(evt.getSource()==Chicken){
-            Chicken.setForeground(new Color(80,80,80));
+           if(evt.getSource()==Tacos){
+            Tacos.setForeground(new Color(80,80,80));
         }
-         if(evt.getSource()==Cookie){
-            Cookie.setForeground(new Color(80,80,80));
-        } if(evt.getSource()==Soda){
-            Soda.setForeground(new Color(80,80,80));
+            if(evt.getSource()==Pretzels){
+            Pretzels.setForeground(new Color(80,80,80));
+        }
+             if(evt.getSource()==Spinach){
+            Spinach.setForeground(new Color(80,80,80));
+        }
+        
+        if(evt.getSource()==Meatball){
+            Meatball.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==C_Alfredo){
+            C_Alfredo.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==S_Alfredo){
+            S_Alfredo.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==S_TopSirloin){
+            S_TopSirloin.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==E_TopSirloin){
+            E_TopSirloin.setForeground(new Color(80,80,80));
+        }
+          if(evt.getSource()==Penne){
+            Penne.setForeground(new Color(80,80,80));
+        }
+           if(evt.getSource()==MacNCheese){
+            MacNCheese.setForeground(new Color(80,80,80));
+        }
+            if(evt.getSource()==Carbonara){
+            Carbonara.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==SoftDrinks){
+            SoftDrinks.setForeground(new Color(80,80,80));
         }
 // TODO add your handling code here:
     }//GEN-LAST:event_menuMouseEntered
 
     private void menuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseExited
         // TODO add your handling code here:
-           if(evt.getSource()==Salad){
-            Salad.setForeground(new Color(0,0,0));
+           if(evt.getSource()==BonelessWings){
+            BonelessWings.setForeground(new Color(0,0,0));
         }
-         if(evt.getSource()==Soup){
-            Soup.setForeground(new Color(0,0,0));
+         if(evt.getSource()==OnionRings){
+            OnionRings.setForeground(new Color(0,0,0));
         }
-           if(evt.getSource()==Pizza){
-            Pizza.setForeground(new Color(0,0,0));
+         if(evt.getSource()==Mozzarella){
+            Mozzarella.setForeground(new Color(0,0,0));
         }
-        if(evt.getSource()==Chicken){
-            Chicken.setForeground(new Color(0,0,0));
+         if(evt.getSource()==Tacos){
+            Tacos.setForeground(new Color(0,0,0));
         }
-         if(evt.getSource()==Cookie){
-            Cookie.setForeground(new Color(0,0,0));
-        } if(evt.getSource()==Soda){
-            Soda.setForeground(new Color(0,0,0));
+         if(evt.getSource()==Pretzels){
+            Pretzels.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==Spinach){
+            Spinach.setForeground(new Color(0,0,0));
+        }
+           if(evt.getSource()==Meatball){
+            Meatball.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==C_Alfredo){
+            C_Alfredo.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==S_TopSirloin){
+            S_TopSirloin.setForeground(new Color(0,0,0));
+        } if(evt.getSource()==SoftDrinks){
+            SoftDrinks.setForeground(new Color(0,0,0));
         }
     }//GEN-LAST:event_menuMouseExited
 
@@ -601,24 +941,43 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Appetizer;
     private javax.swing.JPanel AppetizerPanel;
-    private javax.swing.JLabel Chicken;
-    private javax.swing.JLabel Cookie;
+    private javax.swing.JLabel BonelessWings;
+    private javax.swing.JLabel Bourbon;
+    private javax.swing.JLabel Brownie;
+    private javax.swing.JLabel C_Alfredo;
+    private javax.swing.JLabel Carbonara;
+    private javax.swing.JLabel CheeseCake;
     private javax.swing.JPanel Dessert;
-    private javax.swing.JPanel DessertPanel;
+    private javax.swing.JLabel DoubleRibs;
     private javax.swing.JPanel Drinks;
     private javax.swing.JPanel DrinksPanel;
+    private javax.swing.JLabel E_TopSirloin;
+    private javax.swing.JLabel Lemonade;
+    private javax.swing.JLabel MacNCheese;
     private javax.swing.JPanel MainDish;
-    private javax.swing.JPanel MainDishPanel;
-    private javax.swing.JLabel Pizza;
-    private javax.swing.JLabel Salad;
-    private javax.swing.JLabel Soda;
-    private javax.swing.JLabel Soup;
+    private javax.swing.JLabel Meatball;
+    private javax.swing.JLabel Mozzarella;
+    private javax.swing.JLabel OnionRings;
+    private javax.swing.JLabel OrangeJuice;
+    private javax.swing.JPanel PastaPanel;
+    private javax.swing.JLabel Penne;
+    private javax.swing.JLabel Pretzels;
+    private javax.swing.JLabel Riblet;
+    private javax.swing.JLabel S_Alfredo;
+    private javax.swing.JLabel S_TopSirloin;
+    private javax.swing.JLabel ShrimpSirloin;
+    private javax.swing.JLabel SoftDrinks;
+    private javax.swing.JLabel Spinach;
+    private javax.swing.JPanel SteaksPanel;
+    private javax.swing.JLabel Sundae;
+    private javax.swing.JLabel Tacos;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
@@ -629,8 +988,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     @Override
     public void mouseClicked(MouseEvent e) {
         
-        if(e.getSource()== Salad){
-            String name = "Salad";
+        if(e.getSource()== BonelessWings){
+            String name = "BonlessWings";
             int price = 10;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
@@ -644,8 +1003,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Soup){
-            String name = "Soup";
+            else if(e.getSource()== OnionRings){
+            String name = "OnionRings";
             int price = 8;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
@@ -659,7 +1018,68 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Pizza){
+            else if(e.getSource()== Mozzarella){
+            String name = "MozzarellaSticks";
+            int price = 8;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Tacos){
+            String name = "ChickenTacos";
+            int price = 8;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Pretzels){
+            String name = "Pretzels";
+            int price = 8;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Spinach){
+            String name = "Spinach";
+            int price = 8;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            
+            else if(e.getSource()== Meatball){
             String name = "Pizza";
             int price = 15;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
@@ -674,7 +1094,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Chicken){
+            else if(e.getSource()== C_Alfredo){
             String name = "Chicken";
             int price = 12;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
@@ -689,7 +1109,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Cookie){
+            else if(e.getSource()== S_TopSirloin){
             String name = "Cookie";
             int price = 3;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
@@ -704,7 +1124,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Soda){
+            else if(e.getSource()== SoftDrinks){
             String name = "Soda";
             int price = 2;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
