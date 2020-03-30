@@ -1091,7 +1091,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== Mozzarella){
             String name = "MozzarellaSticks";
-            int price = 8;
+            int price = 6;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1121,7 +1121,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== Pretzels){
             String name = "Pretzels";
-            int price = 8;
+            int price = 14;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1136,7 +1136,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== Spinach){
             String name = "Spinach";
-            int price = 8;
+            int price = 12;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1197,7 +1197,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== Penne){
             String name = "Penne";
-            int price = 12;
+            int price = 13;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1212,7 +1212,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== MacNCheese){
             String name = "MacNCheese";
-            int price = 12;
+            int price = 11;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1227,7 +1227,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== Carbonara){
             String name = "Carbonara";
-            int price = 12;
+            int price = 13;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1243,7 +1243,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
              
             else if(e.getSource()== S_TopSirloin){
             String name = "6OZ TopSirloin";
-            int price = 3;
+            int price = 20;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1258,7 +1258,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== E_TopSirloin){
             String name = "8OZ TopSirloin";
-            int price = 3;
+            int price = 22;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1273,7 +1273,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== ShrimpSirloin){
             String name = "ShrimpSirloin";
-            int price = 3;
+            int price = 24;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1288,7 +1288,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== Riblet){
             String name = "Riblet";
-            int price = 3;
+            int price = 19;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1303,7 +1303,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== Bourbon){
             String name = "Bourbon";
-            int price = 3;
+            int price = 20;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1318,22 +1318,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== DoubleRibs){
             String name = "DoubleRibs";
-            int price = 3;
-            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
-            int total_Price = price * quantity;
-            
-            model = (DefaultTableModel)jTable1.getModel();
-            model.addRow(new Object[]{
-                name,
-                price,
-                quantity,
-                total_Price
-            });
-            
-        }
-            else if(e.getSource()== SoftDrinks){
-            String name = "Soda";
-            int price = 2;
+            int price = 22;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1363,7 +1348,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
         else if(e.getSource()== Lemonade){
             String name = "Lemonade";
-            int price = 2;
+            int price = 4;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1378,7 +1363,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
         else if(e.getSource()== OrangeJuice){
             String name = "OrnageJuice";
-            int price = 2;
+            int price = 4;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1393,7 +1378,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
         else if(e.getSource()== CheeseCake){
             String name = "CheeseCake";
-            int price = 2;
+            int price = 5;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1408,7 +1393,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
         else if(e.getSource()== Brownie){
             String name = "Brownie";
-            int price = 2;
+            int price = 12;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
@@ -1423,7 +1408,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
         else if(e.getSource()== Sundae){
             String name = "Sundae";
-            int price = 2;
+            int price = 15;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
             
