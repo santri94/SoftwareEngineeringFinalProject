@@ -409,19 +409,19 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         AppetizerPanelLayout.setVerticalGroup(
             AppetizerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AppetizerPanelLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(30, 30, 30)
                 .addComponent(BonelessWings)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(OnionRings, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
+                .addComponent(OnionRings)
+                .addGap(20, 20, 20)
                 .addComponent(Mozzarella)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(Tacos)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(Pretzels)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(Spinach)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jPanel6.add(AppetizerPanel, "card2");
@@ -514,17 +514,17 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(PastaPanelLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(Meatball)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(C_Alfredo)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(S_Alfredo)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(Penne)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(MacNCheese)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(20, 20, 20)
                 .addComponent(Carbonara)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jPanel6.add(PastaPanel, "card3");
@@ -602,7 +602,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         SteaksPanelLayout.setHorizontalGroup(
             SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SteaksPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(20, 20, 20)
                 .addGroup(SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DoubleRibs)
                     .addComponent(E_TopSirloin)
@@ -610,24 +610,24 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                     .addComponent(ShrimpSirloin)
                     .addComponent(Riblet)
                     .addComponent(Bourbon))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         SteaksPanelLayout.setVerticalGroup(
             SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SteaksPanelLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(30, 30, 30)
                 .addComponent(S_TopSirloin)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(E_TopSirloin)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(ShrimpSirloin)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(Riblet)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(Bourbon)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(DoubleRibs)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jPanel6.add(SteaksPanel, "card4");
@@ -705,36 +705,36 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         DrinksPanelLayout.setHorizontalGroup(
             DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Sundae)
-                    .addComponent(CheeseCake)
+                    .addComponent(Lemonade)
                     .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(OrangeJuice)
+                        .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Sundae)
+                            .addComponent(CheeseCake)
+                            .addComponent(OrangeJuice)
+                            .addComponent(Brownie))
                         .addGroup(DrinksPanelLayout.createSequentialGroup()
-                            .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(SoftDrinks)
-                                .addComponent(Lemonade))
-                            .addGap(8, 8, 8)))
-                    .addComponent(Brownie))
-                .addContainerGap(42, Short.MAX_VALUE))
+                            .addComponent(SoftDrinks)
+                            .addGap(142, 142, 142))))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         DrinksPanelLayout.setVerticalGroup(
             DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(SoftDrinks)
-                .addGap(18, 18, 18)
-                .addComponent(Lemonade)
-                .addGap(18, 18, 18)
-                .addComponent(OrangeJuice)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CheeseCake)
                 .addGap(32, 32, 32)
+                .addComponent(SoftDrinks)
+                .addGap(20, 20, 20)
+                .addComponent(Lemonade)
+                .addGap(20, 20, 20)
+                .addComponent(OrangeJuice)
+                .addGap(20, 20, 20)
+                .addComponent(CheeseCake)
+                .addGap(20, 20, 20)
                 .addComponent(Brownie)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
                 .addComponent(Sundae)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jPanel6.add(DrinksPanel, "card5");
@@ -866,13 +866,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         if(evt.getSource()==S_Alfredo){
             S_Alfredo.setForeground(new Color(80,80,80));
         }
-         if(evt.getSource()==S_TopSirloin){
-            S_TopSirloin.setForeground(new Color(80,80,80));
-        }
-         if(evt.getSource()==E_TopSirloin){
-            E_TopSirloin.setForeground(new Color(80,80,80));
-        }
-          if(evt.getSource()==Penne){
+        if(evt.getSource()==Penne){
             Penne.setForeground(new Color(80,80,80));
         }
            if(evt.getSource()==MacNCheese){
@@ -881,9 +875,43 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             if(evt.getSource()==Carbonara){
             Carbonara.setForeground(new Color(80,80,80));
         }
-         if(evt.getSource()==SoftDrinks){
+         if(evt.getSource()==S_TopSirloin){
+            S_TopSirloin.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==E_TopSirloin){
+            E_TopSirloin.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==ShrimpSirloin){
+            ShrimpSirloin.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==Riblet){
+            Riblet.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==Bourbon){
+            Bourbon.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==DoubleRibs){
+            DoubleRibs.setForeground(new Color(80,80,80));
+        } 
+        if(evt.getSource()==SoftDrinks){
             SoftDrinks.setForeground(new Color(80,80,80));
         }
+        if(evt.getSource()==Lemonade){
+            Lemonade.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==OrangeJuice){
+            OrangeJuice.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==CheeseCake){
+            CheeseCake.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==Brownie){
+            Brownie.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==Sundae){
+            Sundae.setForeground(new Color(80,80,80));
+        }
+        
 // TODO add your handling code here:
     }//GEN-LAST:event_menuMouseEntered
 
@@ -913,10 +941,53 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         if(evt.getSource()==C_Alfredo){
             C_Alfredo.setForeground(new Color(0,0,0));
         }
+        if(evt.getSource()==S_Alfredo){
+            S_Alfredo.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==Penne){
+            Penne.setForeground(new Color(0,0,0));
+        }
+           if(evt.getSource()==MacNCheese){
+            MacNCheese.setForeground(new Color(0,0,0));
+        }
+            if(evt.getSource()==Carbonara){
+            Carbonara.setForeground(new Color(0,0,0));
+        }
          if(evt.getSource()==S_TopSirloin){
             S_TopSirloin.setForeground(new Color(0,0,0));
-        } if(evt.getSource()==SoftDrinks){
+        }
+        if(evt.getSource()==E_TopSirloin){
+            E_TopSirloin.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==ShrimpSirloin){
+            ShrimpSirloin.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==Riblet){
+            Riblet.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==Bourbon){
+            Bourbon.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==DoubleRibs){
+            DoubleRibs.setForeground(new Color(0,0,0));
+        }  
+         if(evt.getSource()==SoftDrinks){
             SoftDrinks.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==Lemonade){
+            Lemonade.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==OrangeJuice){
+            OrangeJuice.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==CheeseCake){
+            CheeseCake.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==Brownie){
+            Brownie.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==Sundae){
+            Sundae.setForeground(new Color(0,0,0));
         }
     }//GEN-LAST:event_menuMouseExited
 
@@ -1080,7 +1151,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             
             else if(e.getSource()== Meatball){
-            String name = "Pizza";
+            String name = "MeatballSpaghetti";
             int price = 15;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
@@ -1095,7 +1166,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             
         }
             else if(e.getSource()== C_Alfredo){
-            String name = "Chicken";
+            String name = "ChickenAlfredo";
             int price = 12;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
@@ -1109,8 +1180,144 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
+            else if(e.getSource()== S_Alfredo){
+            String name = "ShrimpAlfredo";
+            int price = 12;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Penne){
+            String name = "Penne";
+            int price = 12;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== MacNCheese){
+            String name = "MacNCheese";
+            int price = 12;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Carbonara){
+            String name = "Carbonara";
+            int price = 12;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+             
             else if(e.getSource()== S_TopSirloin){
-            String name = "Cookie";
+            String name = "6OZ TopSirloin";
+            int price = 3;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== E_TopSirloin){
+            String name = "8OZ TopSirloin";
+            int price = 3;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== ShrimpSirloin){
+            String name = "ShrimpSirloin";
+            int price = 3;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Riblet){
+            String name = "Riblet";
+            int price = 3;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Bourbon){
+            String name = "Bourbon";
+            int price = 3;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== DoubleRibs){
+            String name = "DoubleRibs";
             int price = 3;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
@@ -1126,6 +1333,96 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
             else if(e.getSource()== SoftDrinks){
             String name = "Soda";
+            int price = 2;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== SoftDrinks){
+            String name = "SoftDrinks";
+            int price = 2;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== Lemonade){
+            String name = "Lemonade";
+            int price = 2;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== OrangeJuice){
+            String name = "OrnageJuice";
+            int price = 2;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== CheeseCake){
+            String name = "CheeseCake";
+            int price = 2;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== Brownie){
+            String name = "Brownie";
+            int price = 2;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            int total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== Sundae){
+            String name = "Sundae";
             int price = 2;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
             int total_Price = price * quantity;
