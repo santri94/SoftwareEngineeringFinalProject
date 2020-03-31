@@ -60,6 +60,7 @@ public class TableWindow extends javax.swing.JFrame {
         setTitle("Tables");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
+        setPreferredSize(new java.awt.Dimension(925, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(925, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -128,8 +129,7 @@ public class TableWindow extends javax.swing.JFrame {
 
         getContentPane().add(T2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 140, 90));
 
-        SetFreeT1.setBackground(new java.awt.Color(51, 51, 255));
-        SetFreeT1.setForeground(new java.awt.Color(255, 255, 255));
+        SetFreeT1.setBackground(new java.awt.Color(0, 51, 255));
         SetFreeT1.setText("Ready");
         SetFreeT1.setPreferredSize(new java.awt.Dimension(98, 29));
         SetFreeT1.addActionListener(new java.awt.event.ActionListener() {
@@ -139,8 +139,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetFreeT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 90, -1));
 
-        SetDirtyT1.setBackground(new java.awt.Color(51, 51, 255));
-        SetDirtyT1.setForeground(new java.awt.Color(255, 255, 255));
+        SetDirtyT1.setBackground(new java.awt.Color(0, 51, 255));
         SetDirtyT1.setText("Occupied");
         SetDirtyT1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,8 +148,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetDirtyT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 90, -1));
 
-        SetUsedT1.setBackground(new java.awt.Color(51, 51, 255));
-        SetUsedT1.setForeground(new java.awt.Color(255, 255, 255));
+        SetUsedT1.setBackground(new java.awt.Color(0, 51, 255));
         SetUsedT1.setText("Dirty");
         SetUsedT1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,8 +157,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetUsedT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 90, 30));
 
-        SetFreeT2.setBackground(new java.awt.Color(51, 51, 255));
-        SetFreeT2.setForeground(new java.awt.Color(255, 255, 255));
+        SetFreeT2.setBackground(new java.awt.Color(0, 51, 255));
         SetFreeT2.setText("Ready");
         SetFreeT2.setPreferredSize(new java.awt.Dimension(98, 29));
         SetFreeT2.addActionListener(new java.awt.event.ActionListener() {
@@ -170,8 +167,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetFreeT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 90, -1));
 
-        SetDirtyT2.setBackground(new java.awt.Color(51, 51, 255));
-        SetDirtyT2.setForeground(new java.awt.Color(255, 255, 255));
+        SetDirtyT2.setBackground(new java.awt.Color(0, 51, 255));
         SetDirtyT2.setText("Occupied");
         SetDirtyT2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,8 +176,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetDirtyT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 90, -1));
 
-        SetUsedT2.setBackground(new java.awt.Color(51, 51, 255));
-        SetUsedT2.setForeground(new java.awt.Color(255, 255, 255));
+        SetUsedT2.setBackground(new java.awt.Color(0, 51, 255));
         SetUsedT2.setText("Dirty");
         SetUsedT2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,8 +185,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetUsedT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 90, 30));
 
-        SetFreeT3.setBackground(new java.awt.Color(51, 51, 255));
-        SetFreeT3.setForeground(new java.awt.Color(255, 255, 255));
+        SetFreeT3.setBackground(new java.awt.Color(0, 51, 255));
         SetFreeT3.setText("Ready");
         SetFreeT3.setPreferredSize(new java.awt.Dimension(98, 29));
         SetFreeT3.addActionListener(new java.awt.event.ActionListener() {
@@ -201,8 +195,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetFreeT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 90, -1));
 
-        SetDirtyT3.setBackground(new java.awt.Color(51, 51, 255));
-        SetDirtyT3.setForeground(new java.awt.Color(255, 255, 255));
+        SetDirtyT3.setBackground(new java.awt.Color(0, 51, 255));
         SetDirtyT3.setText("Occupied");
         SetDirtyT3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,8 +204,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetDirtyT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 90, -1));
 
-        SetUsedT3.setBackground(new java.awt.Color(51, 51, 255));
-        SetUsedT3.setForeground(new java.awt.Color(255, 255, 255));
+        SetUsedT3.setBackground(new java.awt.Color(0, 51, 255));
         SetUsedT3.setText("Dirty");
         SetUsedT3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,8 +213,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetUsedT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 90, 30));
 
-        SetUsedT4.setBackground(new java.awt.Color(51, 51, 255));
-        SetUsedT4.setForeground(new java.awt.Color(255, 255, 255));
+        SetUsedT4.setBackground(new java.awt.Color(0, 51, 255));
         SetUsedT4.setText("Dirty");
         SetUsedT4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,8 +222,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetUsedT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 90, 30));
 
-        SetFreeT4.setBackground(new java.awt.Color(51, 51, 255));
-        SetFreeT4.setForeground(new java.awt.Color(255, 255, 255));
+        SetFreeT4.setBackground(new java.awt.Color(0, 51, 255));
         SetFreeT4.setText("Ready");
         SetFreeT4.setPreferredSize(new java.awt.Dimension(98, 29));
         SetFreeT4.addActionListener(new java.awt.event.ActionListener() {
@@ -242,8 +232,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetFreeT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 90, -1));
 
-        SetDirtyT4.setBackground(new java.awt.Color(51, 51, 255));
-        SetDirtyT4.setForeground(new java.awt.Color(255, 255, 255));
+        SetDirtyT4.setBackground(new java.awt.Color(0, 51, 255));
         SetDirtyT4.setText("Occupied");
         SetDirtyT4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,8 +241,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(SetDirtyT4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 90, -1));
 
-        OrderT1.setBackground(new java.awt.Color(51, 51, 255));
-        OrderT1.setForeground(new java.awt.Color(255, 255, 255));
+        OrderT1.setBackground(new java.awt.Color(0, 51, 255));
         OrderT1.setText("Order");
         OrderT1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -286,8 +274,7 @@ public class TableWindow extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 110, 160));
 
-        LogOut.setBackground(new java.awt.Color(51, 51, 255));
-        LogOut.setForeground(new java.awt.Color(255, 255, 255));
+        LogOut.setBackground(new java.awt.Color(0, 51, 255));
         LogOut.setText("Log out");
         LogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,8 +288,7 @@ public class TableWindow extends javax.swing.JFrame {
         waiterName.setText("Hi Waiter");
         getContentPane().add(waiterName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, -1, 32));
 
-        OrderT2.setBackground(new java.awt.Color(51, 51, 255));
-        OrderT2.setForeground(new java.awt.Color(255, 255, 255));
+        OrderT2.setBackground(new java.awt.Color(0, 51, 255));
         OrderT2.setText("Order");
         OrderT2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,8 +297,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(OrderT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 80, 30));
 
-        OrderT3.setBackground(new java.awt.Color(51, 51, 255));
-        OrderT3.setForeground(new java.awt.Color(255, 255, 255));
+        OrderT3.setBackground(new java.awt.Color(0, 51, 255));
         OrderT3.setText("Order");
         OrderT3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,8 +306,7 @@ public class TableWindow extends javax.swing.JFrame {
         });
         getContentPane().add(OrderT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 80, 30));
 
-        OrderT4.setBackground(new java.awt.Color(51, 51, 255));
-        OrderT4.setForeground(new java.awt.Color(255, 255, 255));
+        OrderT4.setBackground(new java.awt.Color(0, 51, 255));
         OrderT4.setText("Order");
         OrderT4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
