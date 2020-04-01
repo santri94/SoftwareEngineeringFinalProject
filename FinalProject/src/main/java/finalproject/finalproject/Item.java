@@ -14,14 +14,14 @@ public class Item {
     public String itemId;
     public String itemName;
     public int orderQty;
-    public double price;
+    public double totalPrice; // this price could be the price for one or more items of the same class
     
     
-    public Item(String itemId, String itemName, int orderQty, double price) {
+    public Item(String itemId, String itemName, int orderQty, double totalPrice) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.orderQty = orderQty;
-        this.price = price;
+        this.totalPrice = totalPrice;
         
     }
 }
