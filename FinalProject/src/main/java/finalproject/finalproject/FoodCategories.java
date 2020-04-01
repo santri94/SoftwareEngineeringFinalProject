@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
 public class FoodCategories extends javax.swing.JFrame implements MouseListener {
     
     public int tableOrderNumber;
+    ArrayList<Item> tableOrder = new ArrayList<>();
     
 
     /**
@@ -28,6 +29,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
      */
     public FoodCategories() {
         initComponents();
+        viewStatus.setVisible(false);
         BonelessWings.addMouseListener(this);
         OnionRings.addMouseListener(this);
         Mozzarella.addMouseListener(this);
@@ -117,6 +119,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         Brownie = new javax.swing.JLabel();
         Sundae = new javax.swing.JLabel();
         submitOrder = new javax.swing.JButton();
+        viewStatus = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -762,6 +765,13 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
+        viewStatus.setText("Status");
+        viewStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewStatusActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -774,7 +784,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(submitOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(161, 161, 161))
         );
         jPanel3Layout.setVerticalGroup(
@@ -786,6 +797,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(viewStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(submitOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(69, Short.MAX_VALUE))
@@ -1032,7 +1045,6 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
     private void submitOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitOrderActionPerformed
         
-        ArrayList<Item> tableOrder = new ArrayList<>();
         Random random=new Random();
         int orderNumber = random.nextInt(1000000 - 1000 + 1) + 1000; // this has to be a ramdon number between 1000 and 1,000,000
         
@@ -1144,6 +1156,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
             //we can disable the place order button now and display edit order button just in case
             submitOrder.setVisible(false);
+            jButton1.setVisible(false);
+            viewStatus.setVisible(true);
         
         }
         
@@ -1151,6 +1165,10 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         
         
     }//GEN-LAST:event_submitOrderActionPerformed
+
+    private void viewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewStatusActionPerformed
         
     
    
@@ -1205,6 +1223,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton submitOrder;
+    private javax.swing.JButton viewStatus;
     // End of variables declaration//GEN-END:variables
 
     @Override
