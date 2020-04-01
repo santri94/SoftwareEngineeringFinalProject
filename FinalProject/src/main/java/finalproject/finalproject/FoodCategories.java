@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FoodCategories extends javax.swing.JFrame implements MouseListener {
     
+    public int tableOrderNumber;
     
 
     /**
@@ -771,9 +772,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submitOrder))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(submitOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(161, 161, 161))
         );
         jPanel3Layout.setVerticalGroup(
@@ -785,7 +786,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(submitOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
@@ -1042,9 +1043,89 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         }
         else
         {
-            for (int i = 0; i < jTable1.getRowCount(); i++) {
-                String itemId = "55001"; //do if statements to figure out the itemId
+            for (int i = 0; i < jTable1.getRowCount(); i++) { 
+                String itemId;
                 String itemName = jTable1.getValueAt(i, 0).toString(); //column 0 for name;
+                //--------------------------------------------------------------------------------------
+                //                              Getting itemID
+                //--------------------------------------------------------------------------------------
+                if (itemName.equals("BonelessWings")) {
+                    itemId = "F101";
+                }
+                else if (itemName.equals("OnionRings")) {
+                    itemId = "F102";
+                }
+                else if (itemName.equals("MozzarellaSticks")) {
+                    itemId = "F103";
+                }
+                else if (itemName.equals("OnionRings")) {
+                    itemId = "F104";
+                }
+                else if (itemName.equals("ChickenTacos")) {
+                    itemId = "F105";
+                }
+                else if (itemName.equals("Pretzels")) {
+                    itemId = "F106";
+                }
+                else if (itemName.equals("Spinach")) {
+                    itemId = "F107";
+                }
+                else if (itemName.equals("MeatballSpaghetti")) {
+                    itemId = "F108";
+                }
+                else if (itemName.equals("ChickenAlfredo")) {
+                    itemId = "F109";
+                }
+                else if (itemName.equals("ShrimpAlfredo")) {
+                    itemId = "F110";
+                }
+                else if (itemName.equals("Penne")) {
+                    itemId = "F111";
+                }
+                else if (itemName.equals("MacNCheese")) {
+                    itemId = "F112";
+                }
+                else if (itemName.equals("Carbonara")) {
+                    itemId = "F113";
+                }
+                else if (itemName.equals("6OZ TopSirloin")) {
+                    itemId = "F114";
+                }
+                else if (itemName.equals("8OZ TopSirloin")) {
+                    itemId = "F115";
+                }
+                else if (itemName.equals("ShrimpSirloin")) {
+                    itemId = "F116";
+                }
+                else if (itemName.equals("Riblet")) {
+                    itemId = "F117";
+                }
+                else if (itemName.equals("Bourbon")) {
+                    itemId = "F118";
+                }
+                else if (itemName.equals("DoubleRibs")) {
+                    itemId = "F119";
+                }
+                else if (itemName.equals("SoftDrinks")) {
+                    itemId = "F120";
+                }
+                else if (itemName.equals("Lemonade")) {
+                    itemId = "F121";
+                }
+                else if (itemName.equals("OrangeJuice")) {
+                    itemId = "F122";
+                }
+                else if (itemName.equals("CheeseCake")) {
+                    itemId = "F123";
+                }
+                else if (itemName.equals("Brownie")) {
+                    itemId = "F124";
+                }
+                else{
+                    itemId = "F125"; // for Sundae, which is the last one
+                }
+                //--------------------------------------------------------------------------------------
+                
                 int orderQty = (int) jTable1.getValueAt(i, 2); //column 2 for qty;
                 double totalPrice = (double) jTable1.getValueAt(i, 3); //column 3 for totalPrice;
                 Item tmp = new Item(itemId, itemName, orderQty, totalPrice);
@@ -1052,12 +1133,21 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 tableOrder.add(tmp);
             }
             
+        
+        
+            //set the table order variable for this order, use to check order status
+            tableOrderNumber = orderNumber;
+            //down here we want to insert these list of items into our database.
+            JFrame tmp = new JFrame();
+            tmp.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(tmp, "Number of items : " + tableOrder.size());
+
+            //we can disable the place order button now and display edit order button just in case
+            submitOrder.setVisible(false);
+        
         }
         
-        //down here we want to insert these list of items into our database.
-        JFrame tmp = new JFrame();
-        tmp.setAlwaysOnTop(true);
-        JOptionPane.showMessageDialog(tmp, "Number of items : " + tableOrder.size());
+        
         
         
     }//GEN-LAST:event_submitOrderActionPerformed
