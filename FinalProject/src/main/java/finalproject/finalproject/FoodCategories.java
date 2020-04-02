@@ -1070,71 +1070,68 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 else if (itemName.equals("MozzarellaSticks")) {
                     itemId = "F103";
                 }
-                else if (itemName.equals("OnionRings")) {
+                else if (itemName.equals("ChickenTacos")) {
                     itemId = "F104";
                 }
-                else if (itemName.equals("ChickenTacos")) {
+                else if (itemName.equals("Pretzels")) {
                     itemId = "F105";
                 }
-                else if (itemName.equals("Pretzels")) {
+                else if (itemName.equals("Spinach")) {
                     itemId = "F106";
                 }
-                else if (itemName.equals("Spinach")) {
+                else if (itemName.equals("MeatballSpaghetti")) {
                     itemId = "F107";
                 }
-                else if (itemName.equals("MeatballSpaghetti")) {
+                else if (itemName.equals("ChickenAlfredo")) {
                     itemId = "F108";
                 }
-                else if (itemName.equals("ChickenAlfredo")) {
+                else if (itemName.equals("ShrimpAlfredo")) {
                     itemId = "F109";
                 }
-                else if (itemName.equals("ShrimpAlfredo")) {
+                else if (itemName.equals("Penne")) {
                     itemId = "F110";
                 }
-                else if (itemName.equals("Penne")) {
+                else if (itemName.equals("MacNCheese")) {
                     itemId = "F111";
                 }
-                else if (itemName.equals("MacNCheese")) {
+                else if (itemName.equals("Carbonara")) {
                     itemId = "F112";
                 }
-                else if (itemName.equals("Carbonara")) {
+                else if (itemName.equals("6OZ TopSirloin")) {
                     itemId = "F113";
                 }
-                else if (itemName.equals("6OZ TopSirloin")) {
+                else if (itemName.equals("8OZ TopSirloin")) {
                     itemId = "F114";
                 }
-                else if (itemName.equals("8OZ TopSirloin")) {
+                else if (itemName.equals("ShrimpSirloin")) {
                     itemId = "F115";
                 }
-                else if (itemName.equals("ShrimpSirloin")) {
+                else if (itemName.equals("Riblet")) {
                     itemId = "F116";
                 }
-                else if (itemName.equals("Riblet")) {
+                else if (itemName.equals("Bourbon")) {
                     itemId = "F117";
                 }
-                else if (itemName.equals("Bourbon")) {
+                else if (itemName.equals("DoubleRibs")) {
                     itemId = "F118";
                 }
-                else if (itemName.equals("DoubleRibs")) {
+                else if (itemName.equals("SoftDrinks")) {
                     itemId = "F119";
                 }
-                else if (itemName.equals("SoftDrinks")) {
+                else if (itemName.equals("Lemonade")) {
                     itemId = "F120";
                 }
-                else if (itemName.equals("Lemonade")) {
+                else if (itemName.equals("OrangeJuice")) {
                     itemId = "F121";
                 }
-                else if (itemName.equals("OrangeJuice")) {
+                else if (itemName.equals("CheeseCake")) {
                     itemId = "F122";
                 }
-                else if (itemName.equals("CheeseCake")) {
+                else if (itemName.equals("Brownie")) {
                     itemId = "F123";
                 }
-                else if (itemName.equals("Brownie")) {
-                    itemId = "F124";
-                }
                 else{
-                    itemId = "F125"; // for Sundae, which is the last one
+                    itemId = "F124"; // for Sundae, which is the last one
                 }
                 //--------------------------------------------------------------------------------------
                 
