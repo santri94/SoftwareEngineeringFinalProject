@@ -67,6 +67,8 @@ public class Database {
                         if (testUser.Email.equals(usernameEntered)&& testUser.Pass.equals(passwordEntered)) {
                             //JOptionPane.showMessageDialog(this, "Log In Succesfull");
                             //System.out.println("Log In Succesfull!");
+                            conn.close();
+                            //stmt.close();
                             return testUser;
                         }
                         else{
