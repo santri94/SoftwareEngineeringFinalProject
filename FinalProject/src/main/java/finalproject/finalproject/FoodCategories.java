@@ -30,6 +30,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     public FoodCategories() {
         initComponents();
         viewStatus.setVisible(false);
+        editOrder.setVisible(false);
+        payOrder.setVisible(false);
         BonelessWings.addMouseListener(this);
         OnionRings.addMouseListener(this);
         Mozzarella.addMouseListener(this);
@@ -120,6 +122,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         Sundae = new javax.swing.JLabel();
         submitOrder = new javax.swing.JButton();
         viewStatus = new javax.swing.JButton();
+        payOrder = new javax.swing.JButton();
+        editOrder = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -726,17 +730,13 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(DrinksPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SoftDrinks)
+                    .addComponent(Brownie)
+                    .addComponent(CheeseCake)
+                    .addComponent(OrangeJuice)
                     .addComponent(Lemonade)
-                    .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Sundae)
-                            .addComponent(CheeseCake)
-                            .addComponent(OrangeJuice)
-                            .addComponent(Brownie))
-                        .addGroup(DrinksPanelLayout.createSequentialGroup()
-                            .addComponent(SoftDrinks)
-                            .addGap(142, 142, 142))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(Sundae))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         DrinksPanelLayout.setVerticalGroup(
             DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -745,15 +745,15 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addComponent(SoftDrinks)
                 .addGap(20, 20, 20)
                 .addComponent(Lemonade)
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addComponent(OrangeJuice)
-                .addGap(20, 20, 20)
+                .addGap(24, 24, 24)
                 .addComponent(CheeseCake)
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addComponent(Brownie)
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addComponent(Sundae)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jPanel6.add(DrinksPanel, "card5");
@@ -772,6 +772,20 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
+        payOrder.setText("Pay Order");
+        payOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                payOrderActionPerformed(evt);
+            }
+        });
+
+        editOrder.setText("Edit Order");
+        editOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editOrderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -785,7 +799,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(submitOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(viewStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(viewStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(payOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(editOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(161, 161, 161))
         );
         jPanel3Layout.setVerticalGroup(
@@ -799,6 +815,10 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(viewStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(editOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(payOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(submitOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(69, Short.MAX_VALUE))
@@ -1152,10 +1172,12 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             tmp.setAlwaysOnTop(true);
             JOptionPane.showMessageDialog(tmp, "Number of items : " + tableOrder.size());
 
-            //we can disable the place order button now and display edit order button just in case
+            //we can disable the place order button now and display edit order button and pay order
             submitOrder.setVisible(false);
             jButton1.setVisible(false);
             viewStatus.setVisible(true);
+            editOrder.setVisible(true);
+            payOrder.setVisible(true);
             
             
             //disable first window
@@ -1200,7 +1222,20 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
     private void viewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStatusActionPerformed
         // TODO add your handling code here:
+        // check status in database.
+        // if status is ready then enable pay order
+        JFrame tmp = new JFrame();
+        tmp.setAlwaysOnTop(true);
+        JOptionPane.showMessageDialog(tmp, " IN KITCHEN ");
     }//GEN-LAST:event_viewStatusActionPerformed
+
+    private void payOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payOrderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_payOrderActionPerformed
+
+    private void editOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editOrderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editOrderActionPerformed
         
     
    
@@ -1243,6 +1278,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     private javax.swing.JLabel Sundae;
     private javax.swing.JLabel Tacos;
     private javax.swing.JLabel Title;
+    private javax.swing.JButton editOrder;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -1254,6 +1290,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton payOrder;
     private javax.swing.JButton submitOrder;
     private javax.swing.JButton viewStatus;
     // End of variables declaration//GEN-END:variables
