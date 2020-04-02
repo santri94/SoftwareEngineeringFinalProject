@@ -84,7 +84,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         Drinks = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        Title = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -291,9 +291,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         getContentPane().add(Drinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 90));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
-        jLabel5.setText("MENU");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, -1));
+        Title.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        Title.setText("MENU");
+        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 800, -1));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -1146,6 +1146,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         
             //set the table order variable for this order, use to check order status
             tableOrderNumber = orderNumber;
+            Title.setText("MENU                   ORDER # "+ tableOrderNumber);
             //down here we want to insert these list of items into our database.
             JFrame tmp = new JFrame();
             tmp.setAlwaysOnTop(true);
@@ -1155,6 +1156,40 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             submitOrder.setVisible(false);
             jButton1.setVisible(false);
             viewStatus.setVisible(true);
+            
+            
+            //disable first window
+            BonelessWings.setVisible(false);
+            OnionRings.setVisible(false);
+            Mozzarella.setVisible(false);
+            Tacos.setVisible(false);
+            Pretzels.setVisible(false);
+            Spinach.setVisible(false);
+            
+            //disable second window
+            Meatball.setVisible(false);
+            C_Alfredo.setVisible(false);
+            S_Alfredo.setVisible(false);
+            Penne.setVisible(false);
+            MacNCheese.setVisible(false);
+            Carbonara.setVisible(false);
+            
+            //disable Third window
+            S_TopSirloin.setVisible(false);
+            E_TopSirloin.setVisible(false);
+            ShrimpSirloin.setVisible(false);
+            Riblet.setVisible(false);
+            Bourbon.setVisible(false);
+            DoubleRibs.setVisible(false);
+            
+            //disable Third window
+            SoftDrinks.setVisible(false);
+            Lemonade.setVisible(false);
+            OrangeJuice.setVisible(false);
+            CheeseCake.setVisible(false);
+            Brownie.setVisible(false);
+            Sundae.setVisible(false);
+            
         
         }
         
@@ -1207,12 +1242,12 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     private javax.swing.JPanel SteaksPanel;
     private javax.swing.JLabel Sundae;
     private javax.swing.JLabel Tacos;
+    private javax.swing.JLabel Title;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
