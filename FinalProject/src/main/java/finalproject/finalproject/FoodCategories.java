@@ -10,6 +10,7 @@ import java.util.Random;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +27,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     public int tableOrderNumber;
     public String waiterName;
     public int thisTableNumber;
+    public DecimalFormat df = new DecimalFormat("#.00"); // two decimal places
     ArrayList<Item> tableOrder = new ArrayList<>();
     
 
@@ -1167,10 +1169,16 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
             
         
+            //Get total price of the order
+            double priceForThisOrder = 0;
+            
+            for(Item itemTmp : tableOrder){
+                priceForThisOrder += itemTmp.totalPrice;
+            }
             
             //set the table order variable for this order, use to check order status
             tableOrderNumber = orderNumber;
-            Title.setText("MENU                   ORDER # "+ tableOrderNumber);
+            Title.setText("MENU                   ORDER # "+ tableOrderNumber + " -- $" + df.format(priceForThisOrder));
             
             //---------------------------------------------------------------------------------------------
             //          Down here we want to insert these list of items into our database.
