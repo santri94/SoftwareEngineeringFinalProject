@@ -18,6 +18,8 @@ public class TableWindow extends javax.swing.JFrame {
     FoodCategories table2FoodCategories = new FoodCategories();
     FoodCategories table3FoodCategories = new FoodCategories();
     FoodCategories table4FoodCategories = new FoodCategories();
+    
+    public String waiterNameString;
     /**
      * Creates new form TableWindow
      */
@@ -391,6 +393,8 @@ public class TableWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         T1.setBackground(Color.yellow);
         table1FoodCategories.setVisible(true);
+        table1FoodCategories.thisTableNumber = 1;
+        table1FoodCategories.waiterName = waiterNameString;
         
     }//GEN-LAST:event_OrderT1ActionPerformed
 
@@ -406,6 +410,8 @@ public class TableWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         T2.setBackground(Color.yellow);
         table2FoodCategories.setVisible(true);
+        table2FoodCategories.thisTableNumber = 2;
+        table2FoodCategories.waiterName = waiterNameString;
         
     }//GEN-LAST:event_OrderT2ActionPerformed
 
@@ -413,6 +419,8 @@ public class TableWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         T3.setBackground(Color.yellow);
         table3FoodCategories.setVisible(true);
+        table3FoodCategories.thisTableNumber = 3;
+        table3FoodCategories.waiterName = waiterNameString;
         
     }//GEN-LAST:event_OrderT3ActionPerformed
 
@@ -420,6 +428,8 @@ public class TableWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         T4.setBackground(Color.yellow);
         table4FoodCategories.setVisible(true);
+        table4FoodCategories.thisTableNumber = 4;
+        table4FoodCategories.waiterName = waiterNameString;
         
     }//GEN-LAST:event_OrderT4ActionPerformed
     
@@ -428,7 +438,8 @@ public class TableWindow extends javax.swing.JFrame {
         // Then set up the window according to user type
         
         // Setting Up Name
-        this.waiterName.setText("Hi "+currentUser.F_Name);
+        waiterNameString = currentUser.F_Name;
+        this.waiterName.setText("Hi "+waiterNameString);
         
         // Setting Up View for waiter - CANNOT edit table status
         if (currentUser.Type.equals("waiter")) {

@@ -5,6 +5,7 @@
  */
 package finalproject.finalproject;
 
+import com.mysql.cj.WarningListener;
 import java.util.Random;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -23,6 +24,8 @@ import javax.swing.table.DefaultTableModel;
 public class FoodCategories extends javax.swing.JFrame implements MouseListener {
     
     public int tableOrderNumber;
+    public String waiterName;
+    public int thisTableNumber;
     ArrayList<Item> tableOrder = new ArrayList<>();
     
 
@@ -1178,7 +1181,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             
             Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
             try {
-                myDatabase.InsertItems(tableOrder, tableOrderNumber, "Josh", 1);
+                myDatabase.InsertItems(tableOrder, tableOrderNumber, waiterName, thisTableNumber);
             } catch (Exception ex) {
                 Logger.getLogger(FoodCategories.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1704,4 +1707,5 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     public void mouseExited(MouseEvent arg0) {
         //To change body of generated methods, choose Tools | Templates.
     }
+
 }
