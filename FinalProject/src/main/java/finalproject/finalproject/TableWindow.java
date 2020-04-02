@@ -465,16 +465,16 @@ public class TableWindow extends javax.swing.JFrame {
             //                  Tables Orders BUTTONS 
             //                 available on GREEN ONLY
             //-----------------------------------------------------------------
-            if (T1.getBackground().equals(Color.green)) {
+            if (T1.getBackground().equals(Color.green) || T1.getBackground().equals(Color.yellow)) {
                 OrderT1.setVisible(true);                
             }
-            if (T2.getBackground().equals(Color.green)) {
+            if (T2.getBackground().equals(Color.green) || T2.getBackground().equals(Color.yellow)) {
                 OrderT2.setVisible(true);                
             }
-            if (T3.getBackground().equals(Color.green)) {
+            if (T3.getBackground().equals(Color.green) || T3.getBackground().equals(Color.yellow)) {
                 OrderT3.setVisible(true);                
             }
-            if (T4.getBackground().equals(Color.green)) {
+            if (T4.getBackground().equals(Color.green) || T4.getBackground().equals(Color.yellow)) {
                 OrderT4.setVisible(true);                
             }
             //-----------------------------------------------------------------
