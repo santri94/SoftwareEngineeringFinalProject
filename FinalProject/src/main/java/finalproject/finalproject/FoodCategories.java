@@ -1211,6 +1211,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             Brownie.setVisible(false);
             Sundae.setVisible(false);
             
+            //Set table color to yellow
+            
+            
         
         }
         

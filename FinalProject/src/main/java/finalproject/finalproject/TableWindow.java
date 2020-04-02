@@ -389,6 +389,7 @@ public class TableWindow extends javax.swing.JFrame {
 
     private void OrderT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT1ActionPerformed
         // TODO add your handling code here:
+        T1.setBackground(Color.yellow);
         table1FoodCategories.setVisible(true);
         
     }//GEN-LAST:event_OrderT1ActionPerformed
@@ -403,18 +404,21 @@ public class TableWindow extends javax.swing.JFrame {
 
     private void OrderT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT2ActionPerformed
         // TODO add your handling code here:
+        T2.setBackground(Color.yellow);
         table2FoodCategories.setVisible(true);
         
     }//GEN-LAST:event_OrderT2ActionPerformed
 
     private void OrderT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT3ActionPerformed
         // TODO add your handling code here:
+        T3.setBackground(Color.yellow);
         table3FoodCategories.setVisible(true);
         
     }//GEN-LAST:event_OrderT3ActionPerformed
 
     private void OrderT4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT4ActionPerformed
         // TODO add your handling code here:
+        T4.setBackground(Color.yellow);
         table4FoodCategories.setVisible(true);
         
     }//GEN-LAST:event_OrderT4ActionPerformed
