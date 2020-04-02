@@ -10,6 +10,8 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -1162,14 +1164,27 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
             
         
-        
+            
             //set the table order variable for this order, use to check order status
             tableOrderNumber = orderNumber;
             Title.setText("MENU                   ORDER # "+ tableOrderNumber);
-            //down here we want to insert these list of items into our database.
+            
+            //---------------------------------------------------------------------------------------------
+            //          Down here we want to insert these list of items into our database.
+            //---------------------------------------------------------------------------------------------
             JFrame tmp = new JFrame();
             tmp.setAlwaysOnTop(true);
             JOptionPane.showMessageDialog(tmp, "Number of items : " + tableOrder.size());
+            
+            Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+            try {
+                myDatabase.InsertItems(tableOrder, tableOrderNumber, "Josh", 1);
+            } catch (Exception ex) {
+                Logger.getLogger(FoodCategories.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
+            //---------------------------------------------------------------------------------------------
 
             //we can disable the place order button now and display edit order button and pay order
             submitOrder.setVisible(false);
