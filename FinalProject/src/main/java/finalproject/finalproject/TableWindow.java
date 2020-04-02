@@ -13,6 +13,11 @@ import java.awt.Color;
  */
 public class TableWindow extends javax.swing.JFrame {
 
+    //These objects are for each of our tables 
+    FoodCategories table1FoodCategories = new FoodCategories();
+    FoodCategories table2FoodCategories = new FoodCategories();
+    FoodCategories table3FoodCategories = new FoodCategories();
+    FoodCategories table4FoodCategories = new FoodCategories();
     /**
      * Creates new form TableWindow
      */
@@ -384,8 +389,7 @@ public class TableWindow extends javax.swing.JFrame {
 
     private void OrderT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT1ActionPerformed
         // TODO add your handling code here:
-        FoodCategories food = new FoodCategories();
-        food.setVisible(true);
+        table1FoodCategories.setVisible(true);
         
     }//GEN-LAST:event_OrderT1ActionPerformed
 
@@ -399,22 +403,19 @@ public class TableWindow extends javax.swing.JFrame {
 
     private void OrderT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT2ActionPerformed
         // TODO add your handling code here:
-        FoodCategories food = new FoodCategories();
-        food.setVisible(true);
+        table2FoodCategories.setVisible(true);
         
     }//GEN-LAST:event_OrderT2ActionPerformed
 
     private void OrderT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT3ActionPerformed
         // TODO add your handling code here:
-        FoodCategories food = new FoodCategories();
-        food.setVisible(true);
+        table3FoodCategories.setVisible(true);
         
     }//GEN-LAST:event_OrderT3ActionPerformed
 
     private void OrderT4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderT4ActionPerformed
         // TODO add your handling code here:
-        FoodCategories food = new FoodCategories();
-        food.setVisible(true);
+        table4FoodCategories.setVisible(true);
         
     }//GEN-LAST:event_OrderT4ActionPerformed
     

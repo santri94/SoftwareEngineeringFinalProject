@@ -136,7 +136,6 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
         setMaximumSize(new java.awt.Dimension(950, 580));
         setMinimumSize(new java.awt.Dimension(950, 580));
