@@ -119,7 +119,7 @@ public class Database {
                     Connection conn = getConnection();
                     
                     for(Item tmpItem : tableOrderArrayList){
-                        String query = "INSERT INTO ORDERS(itemId, orderNumber, orderStatus, waiter, tableNumber, date, price, qty) VALUES ('"+tmpItem.itemId+"','"+orderNumber+"','"+orderStatus+"','"+waiter+"','"+tableNumber+"','"+localDate+"','"+tmpItem.totalPrice+"','"+tmpItem.orderQty+"')";
+                        String query = "INSERT INTO ORDERS(itemId, orderNumber, itemName, orderStatus, waiter, tableNumber, date, price, qty) VALUES ('"+tmpItem.itemId+"','"+orderNumber+"','"+tmpItem.itemName+"','"+orderStatus+"','"+waiter+"','"+tableNumber+"','"+localDate+"','"+tmpItem.totalPrice+"','"+tmpItem.orderQty+"')";
                         stmt = conn.createStatement();
                         stmt.executeUpdate(query);
                     }
