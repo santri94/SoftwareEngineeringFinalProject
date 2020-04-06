@@ -39,9 +39,13 @@ public class TableWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         T1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         T3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         T4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         T2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         SetFreeT1 = new javax.swing.JButton();
         SetDirtyT1 = new javax.swing.JButton();
         SetUsedT1 = new javax.swing.JButton();
@@ -75,15 +79,24 @@ public class TableWindow extends javax.swing.JFrame {
         T1.setBackground(new java.awt.Color(255, 255, 255));
         T1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("1");
+
         javax.swing.GroupLayout T1Layout = new javax.swing.GroupLayout(T1);
         T1.setLayout(T1Layout);
         T1Layout.setHorizontalGroup(
             T1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
+            .addGroup(T1Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         T1Layout.setVerticalGroup(
             T1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 84, Short.MAX_VALUE)
+            .addGroup(T1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         getContentPane().add(T1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 90));
@@ -91,15 +104,24 @@ public class TableWindow extends javax.swing.JFrame {
         T3.setBackground(new java.awt.Color(255, 255, 255));
         T3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setText("3");
+
         javax.swing.GroupLayout T3Layout = new javax.swing.GroupLayout(T3);
         T3.setLayout(T3Layout);
         T3Layout.setHorizontalGroup(
             T3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T3Layout.createSequentialGroup()
+                .addContainerGap(59, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
         );
         T3Layout.setVerticalGroup(
             T3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 84, Short.MAX_VALUE)
+            .addGroup(T3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         getContentPane().add(T3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 140, 90));
@@ -107,15 +129,24 @@ public class TableWindow extends javax.swing.JFrame {
         T4.setBackground(new java.awt.Color(255, 255, 255));
         T4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setText("4");
+
         javax.swing.GroupLayout T4Layout = new javax.swing.GroupLayout(T4);
         T4.setLayout(T4Layout);
         T4Layout.setHorizontalGroup(
             T4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T4Layout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
         );
         T4Layout.setVerticalGroup(
             T4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 84, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T4Layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
 
         getContentPane().add(T4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 140, 90));
@@ -123,15 +154,24 @@ public class TableWindow extends javax.swing.JFrame {
         T2.setBackground(new java.awt.Color(255, 255, 255));
         T2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setText("2");
+
         javax.swing.GroupLayout T2Layout = new javax.swing.GroupLayout(T2);
         T2.setLayout(T2Layout);
         T2Layout.setHorizontalGroup(
             T2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
+            .addGroup(T2Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         T2Layout.setVerticalGroup(
             T2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 84, Short.MAX_VALUE)
+            .addGroup(T2Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         getContentPane().add(T2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 140, 90));
@@ -540,7 +580,11 @@ public class TableWindow extends javax.swing.JFrame {
     private javax.swing.JPanel T2;
     private javax.swing.JPanel T3;
     private javax.swing.JPanel T4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel waiterName;
     // End of variables declaration//GEN-END:variables
