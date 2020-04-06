@@ -5,6 +5,13 @@
  */
 package finalproject.finalproject;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author kuervo
@@ -28,18 +35,72 @@ public class KitchenScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Orders = new javax.swing.JTable();
+        updateOrders = new javax.swing.JButton();
 
         setResizable(false);
+
+        Orders.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Orders.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Order #", "Item", "Status", "Table"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(Orders);
+        if (Orders.getColumnModel().getColumnCount() > 0) {
+            Orders.getColumnModel().getColumn(0).setResizable(false);
+            Orders.getColumnModel().getColumn(1).setResizable(false);
+            Orders.getColumnModel().getColumn(2).setResizable(false);
+            Orders.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        updateOrders.setText("Update");
+        updateOrders.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateOrdersActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 699, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(299, 299, 299)
+                .addComponent(updateOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -57,12 +118,62 @@ public class KitchenScreen extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void updateOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateOrdersActionPerformed
+        //Getting Table ready
+            DefaultTableModel ordersTableModel = new DefaultTableModel();
+            ordersTableModel = (DefaultTableModel) Orders.getModel();
+        
+        //Empty the current items in our table then put the new ones in
+        int rowCount = ordersTableModel.getRowCount();
+        //Remove rows one by one from the end of the table
+        for (int i = rowCount - 1; i >= 0; i--) {
+            ordersTableModel.removeRow(i);
+        }
+        
+        //Adding updated ones
+        Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+        
+        try {
+            Connection conn = myDatabase.getConnection();
+            
+            Statement stmt = null;
+            String query = "SELECT * FROM ORDERS WHERE orderStatus = 'IN KITCHEN' ORDER BY date ASC ";
+            //String query = "SELECT * FROM ORDERS ORDER BY date DESC";
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            
+            while (rs.next()) 
+            {
+                
+                int orderNumber = rs.getInt("orderNumber");
+                String itemName = rs.getString("itemName");
+                String orderStatus = rs.getString("orderStatus");
+                int tableNumber = rs.getInt("tableNumber");
+                
+                ordersTableModel.addRow(new Object[]{
+                    orderNumber,
+                    itemName,
+                    orderStatus,
+                    tableNumber
+                });
+            
+            }
+            conn.close();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(KitchenScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updateOrdersActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Orders;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton updateOrders;
     // End of variables declaration//GEN-END:variables
 }

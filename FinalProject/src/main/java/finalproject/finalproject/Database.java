@@ -86,7 +86,7 @@ public class Database {
                 }
                     return null;
 
-                }
+            }
             
             public void RegisterUser(String email, String password, String type, String firstName, String lastName, String phone, String address ) throws Exception{
                 try {
@@ -134,6 +134,37 @@ public class Database {
                 }
                 
             }
+            
+            /*
+            public void GetOrders() throws Exception{
+                
+                try {
+                    
+                    Statement stmt = null;
+                    Connection conn = getConnection();
+                    String query = "SELECT * FROM ORDERS ORDER BY date DESC";
+                    stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery(query);
+                    while (rs.next()) {
+                        String email = rs.getString("Email");
+                        String userPassword = rs.getString("Pass");
+                        String type = rs.getString("Type");
+                        String firstName = rs.getString("F_Name");
+                        String lastName = rs.getString("L_Name");
+                        String phone = rs.getString("Phone");
+                        String address = rs.getString("Address");
+
+
+
+
+
+                    }
+                } catch (SQLException e ) {
+                    System.err.println(e);
+                }
+
+            }
+            */
             
             
         

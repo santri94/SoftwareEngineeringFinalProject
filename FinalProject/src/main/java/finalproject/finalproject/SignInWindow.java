@@ -30,6 +30,11 @@ public class SignInWindow extends javax.swing.JFrame {
     //----------------------------------------------------------------------------------------------------------------
     TableWindow tables = new TableWindow();
     //----------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------
+    //                  We would only use one kitchen Screen
+    //----------------------------------------------------------------------------------------------------------------
+    KitchenScreen kitchen = new KitchenScreen();
+    //----------------------------------------------------------------------------------------------------------------
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -235,10 +240,9 @@ public class SignInWindow extends javax.swing.JFrame {
                     //TableWindow x = new TableWindow();
                     //x.setVisible(true);                    
                 }
-                else if(currentUser.Type.equals("kitchen")){
+                else if(currentUser.Type.equals("chef")){
                     clearUserAndPassword();
-                    //TableWindow x = new TableWindow();
-                    //x.setVisible(true);                    
+                    kitchen.setVisible(true);                
                 }
                 
                 
