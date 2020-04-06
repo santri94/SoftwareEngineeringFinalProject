@@ -47,14 +47,14 @@ public class KitchenScreen extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Order #", "Item", "Status", "Table"
+                "Order #", "Item", "Quantity", "Status", "Table"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -71,6 +71,7 @@ public class KitchenScreen extends javax.swing.JFrame {
             Orders.getColumnModel().getColumn(1).setResizable(false);
             Orders.getColumnModel().getColumn(2).setResizable(false);
             Orders.getColumnModel().getColumn(3).setResizable(false);
+            Orders.getColumnModel().getColumn(4).setResizable(false);
         }
 
         updateOrders.setText("Update");
@@ -147,12 +148,14 @@ public class KitchenScreen extends javax.swing.JFrame {
                 
                 int orderNumber = rs.getInt("orderNumber");
                 String itemName = rs.getString("itemName");
+                int qty = rs.getInt("qty");
                 String orderStatus = rs.getString("orderStatus");
                 int tableNumber = rs.getInt("tableNumber");
                 
                 ordersTableModel.addRow(new Object[]{
                     orderNumber,
                     itemName,
+                    qty,
                     orderStatus,
                     tableNumber
                 });
