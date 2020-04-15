@@ -1260,8 +1260,71 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
     private void payOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payOrderActionPerformed
         
+        //-------------------------------------------------------------------------------------------
         // Need to set everything back as ready table, clean table order, clean table item list ...
+        //-------------------------------------------------------------------------------------------
+        tableOrderNumber = 0;
+        waiterName = "";
+        tableOrder.clear();
+        
+        //empty table of orders
+        
+        DefaultTableModel ordersTableModel = new DefaultTableModel();
+        ordersTableModel = (DefaultTableModel) jTable1.getModel();
+        
+        int rowCount = ordersTableModel.getRowCount();
+        //Remove rows one by one from the end of the table
+        for (int i = rowCount - 1; i >= 0; i--) {
+            ordersTableModel.removeRow(i);
+        }
+        
+        Title.setText("MENU");
+        
+        //we can disable the place order button now and display edit order button and pay order
+            submitOrder.setVisible(true);
+            jButton1.setVisible(true);
+            viewStatus.setVisible(false);
+            editOrder.setVisible(false);
+            payOrder.setVisible(false);
+            
+            
+            //disable first window
+            BonelessWings.setVisible(true);
+            OnionRings.setVisible(true);
+            Mozzarella.setVisible(true);
+            Tacos.setVisible(true);
+            Pretzels.setVisible(true);
+            Spinach.setVisible(true);
+            
+            //disable second window
+            Meatball.setVisible(true);
+            C_Alfredo.setVisible(true);
+            S_Alfredo.setVisible(true);
+            Penne.setVisible(true);
+            MacNCheese.setVisible(true);
+            Carbonara.setVisible(true);
+            
+            //disable Third window
+            S_TopSirloin.setVisible(true);
+            E_TopSirloin.setVisible(true);
+            ShrimpSirloin.setVisible(true);
+            Riblet.setVisible(true);
+            Bourbon.setVisible(true);
+            DoubleRibs.setVisible(true);
+            
+            //disable Third window
+            SoftDrinks.setVisible(true);
+            Lemonade.setVisible(true);
+            OrangeJuice.setVisible(true);
+            CheeseCake.setVisible(true);
+            Brownie.setVisible(true);
+            Sundae.setVisible(true);
+        //-------------------------------------------------------------------------------------------
+
+        //-------------------------------------------------------------------------------------------
         // Need to check tableNumber then proceed to set this table to red
+        //-------------------------------------------------------------------------------------------
+
         if (thisTableNumber == 1) {
             myTableWindow.T1.setBackground(Color.red);
             myTableWindow.OrderT1.setVisible(false);
@@ -1278,6 +1341,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             myTableWindow.T4.setBackground(Color.red);
             myTableWindow.OrderT4.setVisible(false);
         }
+        //-------------------------------------------------------------------------------------------
+
         
         JFrame tmp = new JFrame();
         tmp.setAlwaysOnTop(true);
