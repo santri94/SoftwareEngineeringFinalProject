@@ -10,6 +10,9 @@ import java.util.Random;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -1203,7 +1206,6 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             jButton1.setVisible(false);
             viewStatus.setVisible(true);
             editOrder.setVisible(true);
-            payOrder.setVisible(true);
             
             
             //disable first window
@@ -1253,9 +1255,56 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         // TODO add your handling code here:
         // check status in database.
         // if status is ready then enable pay order
-        JFrame tmp = new JFrame();
-        tmp.setAlwaysOnTop(true);
-        JOptionPane.showMessageDialog(tmp, " IN KITCHEN ");
+        String ORDERSTATUS = "IN KITCHEN";
+        int countItemsReady = 0;
+        ArrayList<String> itemsStatus = new ArrayList<>();
+        
+        Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+        
+        try {
+            Connection conn = myDatabase.getConnection();
+            
+            Statement stmt = null;
+            String query = "SELECT itemId, orderStatus FROM ORDERS WHERE orderNumber ='"+tableOrderNumber+"'";
+            //String query = "SELECT * FROM ORDERS ORDER BY date DESC";
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            
+            while (rs.next()) 
+            {
+                
+                String itemId = rs.getString("itemId");
+                String orderStatus = rs.getString("orderStatus");
+                
+                if (orderStatus.equals("READY")) {
+                    countItemsReady += 1;
+                }
+                
+                itemsStatus.add(orderStatus);
+            
+            }
+            conn.close();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(KitchenScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        if (itemsStatus.size() == countItemsReady) { //if all items in this order are ready, set ORDERSTATUS as READY
+            ORDERSTATUS = "READY";
+            JFrame tmp = new JFrame();
+            tmp.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(tmp, ORDERSTATUS);
+            payOrder.setVisible(true);
+        }
+        else{
+            JFrame tmp = new JFrame();
+            tmp.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(tmp, ORDERSTATUS);
+        }
+        
+        
+        
+        
     }//GEN-LAST:event_viewStatusActionPerformed
 
     private void payOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payOrderActionPerformed
