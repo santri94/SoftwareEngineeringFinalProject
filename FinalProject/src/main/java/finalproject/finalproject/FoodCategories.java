@@ -24,6 +24,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FoodCategories extends javax.swing.JFrame implements MouseListener {
     
+    public TableWindow myTableWindow;
     public int tableOrderNumber;
     public String waiterName;
     public int thisTableNumber;
@@ -1258,7 +1259,33 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     }//GEN-LAST:event_viewStatusActionPerformed
 
     private void payOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payOrderActionPerformed
-        // TODO add your handling code here:
+        
+        // Need to set everything back as ready table, clean table order, clean table item list ...
+        // Need to check tableNumber then proceed to set this table to red
+        if (thisTableNumber == 1) {
+            myTableWindow.T1.setBackground(Color.red);
+            myTableWindow.OrderT1.setVisible(false);
+        }
+        else if (thisTableNumber == 2) {
+            myTableWindow.T2.setBackground(Color.red);
+            myTableWindow.OrderT2.setVisible(false);
+        }
+        else if (thisTableNumber == 3) {
+            myTableWindow.T3.setBackground(Color.red);
+            myTableWindow.OrderT3.setVisible(false);
+        }
+        else{ // table 4
+            myTableWindow.T4.setBackground(Color.red);
+            myTableWindow.OrderT4.setVisible(false);
+        }
+        
+        JFrame tmp = new JFrame();
+        tmp.setAlwaysOnTop(true);
+        JOptionPane.showMessageDialog(tmp, " ORDER WAS PAID ");
+        
+        this.hide();
+           
+        
     }//GEN-LAST:event_payOrderActionPerformed
 
     private void editOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editOrderActionPerformed

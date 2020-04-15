@@ -434,6 +434,7 @@ public class TableWindow extends javax.swing.JFrame {
         T1.setBackground(Color.yellow);
         table1FoodCategories.setVisible(true);
         table1FoodCategories.thisTableNumber = 1;
+        table1FoodCategories.myTableWindow = this;
         table1FoodCategories.waiterName = waiterNameString;
         
     }//GEN-LAST:event_OrderT1ActionPerformed
@@ -451,6 +452,7 @@ public class TableWindow extends javax.swing.JFrame {
         T2.setBackground(Color.yellow);
         table2FoodCategories.setVisible(true);
         table2FoodCategories.thisTableNumber = 2;
+        table2FoodCategories.myTableWindow = this;
         table2FoodCategories.waiterName = waiterNameString;
         
     }//GEN-LAST:event_OrderT2ActionPerformed
@@ -460,6 +462,7 @@ public class TableWindow extends javax.swing.JFrame {
         T3.setBackground(Color.yellow);
         table3FoodCategories.setVisible(true);
         table3FoodCategories.thisTableNumber = 3;
+        table3FoodCategories.myTableWindow = this;
         table3FoodCategories.waiterName = waiterNameString;
         
     }//GEN-LAST:event_OrderT3ActionPerformed
@@ -469,6 +472,7 @@ public class TableWindow extends javax.swing.JFrame {
         T4.setBackground(Color.yellow);
         table4FoodCategories.setVisible(true);
         table4FoodCategories.thisTableNumber = 4;
+        table4FoodCategories.myTableWindow = this;
         table4FoodCategories.waiterName = waiterNameString;
         
     }//GEN-LAST:event_OrderT4ActionPerformed
@@ -560,10 +564,10 @@ public class TableWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogOut;
-    private javax.swing.JButton OrderT1;
-    private javax.swing.JButton OrderT2;
-    private javax.swing.JButton OrderT3;
-    private javax.swing.JButton OrderT4;
+    public javax.swing.JButton OrderT1;
+    public javax.swing.JButton OrderT2;
+    public javax.swing.JButton OrderT3;
+    public javax.swing.JButton OrderT4;
     private javax.swing.JButton SetDirtyT1;
     private javax.swing.JButton SetDirtyT2;
     private javax.swing.JButton SetDirtyT3;
@@ -576,10 +580,10 @@ public class TableWindow extends javax.swing.JFrame {
     private javax.swing.JButton SetUsedT2;
     private javax.swing.JButton SetUsedT3;
     private javax.swing.JButton SetUsedT4;
-    private javax.swing.JPanel T1;
-    private javax.swing.JPanel T2;
-    private javax.swing.JPanel T3;
-    private javax.swing.JPanel T4;
+    public javax.swing.JPanel T1;
+    public javax.swing.JPanel T2;
+    public javax.swing.JPanel T3;
+    public javax.swing.JPanel T4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
