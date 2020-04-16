@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -38,6 +40,7 @@ public class KitchenScreen extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Orders = new javax.swing.JTable();
         updateOrders = new javax.swing.JButton();
+        markAsReady = new javax.swing.JButton();
 
         setResizable(false);
 
@@ -81,6 +84,13 @@ public class KitchenScreen extends javax.swing.JFrame {
             }
         });
 
+        markAsReady.setText("Mark As Ready");
+        markAsReady.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                markAsReadyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -90,8 +100,10 @@ public class KitchenScreen extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(299, 299, 299)
+                .addGap(177, 177, 177)
                 .addComponent(updateOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(114, 114, 114)
+                .addComponent(markAsReady, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -100,7 +112,9 @@ public class KitchenScreen extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(updateOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(markAsReady, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
 
@@ -168,6 +182,87 @@ public class KitchenScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_updateOrdersActionPerformed
 
+    private void markAsReadyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_markAsReadyActionPerformed
+        // Get Items that were selected from Orders table
+        DefaultTableModel ordersTableModel = new DefaultTableModel();
+        ordersTableModel = (DefaultTableModel) Orders.getModel();
+        
+        var x = Orders.getSelectedRows();
+        var y = Orders.getSelectedRow();
+        String tmpItemName;
+        int tmpOrderNumber;
+        System.out.println("Number of items selected : "+ x.length);
+        
+        if (x.length == 0) {
+            //pop up message - Pls select an item
+            JFrame tmp = new JFrame();
+            tmp.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(tmp, "Please Select Item to Mark as READY");
+        }
+        else{
+            try {
+                Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+                Statement stmt = null;
+                Connection conn = myDatabase.getConnection();
+                for(int tmp : x){
+                    tmpItemName = Orders.getValueAt(tmp, 1).toString(); //1 is the index for Column Name
+                    tmpOrderNumber = (int) Orders.getValueAt(tmp, 0);
+
+                    // Now do the update query to the database
+                    String query = "UPDATE ORDERS SET orderStatus = 'READY' WHERE orderNumber ='"+tmpOrderNumber+"' AND itemName = '"+tmpItemName+"'";
+                    stmt = conn.createStatement();
+                    stmt.executeUpdate(query);
+                    
+                    
+                }
+                
+                // Reprint Table
+                
+                //Empty the current items in our table then put the new ones in
+                int rowCount = ordersTableModel.getRowCount();
+                //Remove rows one by one from the end of the table
+                for (int i = rowCount - 1; i >= 0; i--) {
+                    ordersTableModel.removeRow(i);
+                }
+                
+                //now reprint table with items still IN KITCHEN
+                String query = "SELECT * FROM ORDERS WHERE orderStatus = 'IN KITCHEN' ORDER BY date ASC ";
+                stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+
+                while (rs.next()) 
+                {
+
+                    int orderNumber = rs.getInt("orderNumber");
+                    String itemName = rs.getString("itemName");
+                    int qty = rs.getInt("qty");
+                    String orderStatus = rs.getString("orderStatus");
+                    int tableNumber = rs.getInt("tableNumber");
+
+                    ordersTableModel.addRow(new Object[]{
+                        orderNumber,
+                        itemName,
+                        qty,
+                        orderStatus,
+                        tableNumber
+                    });
+
+                }
+                
+                conn.close();
+                
+                
+                
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_markAsReadyActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -177,6 +272,7 @@ public class KitchenScreen extends javax.swing.JFrame {
     private javax.swing.JTable Orders;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton markAsReady;
     private javax.swing.JButton updateOrders;
     // End of variables declaration//GEN-END:variables
 }
