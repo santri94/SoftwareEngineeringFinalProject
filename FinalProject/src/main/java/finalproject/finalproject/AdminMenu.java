@@ -100,6 +100,11 @@ public class AdminMenu extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(0, 51, 255));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Popular Items");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(0, 51, 255));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,8 +186,13 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        
-        SalesAnalysis userx = new SalesAnalysis();
-        userx.setVisible(true);
+        Sales1 x = new Sales1();
+        x.setVisible(true);
+        x.setDefaultCloseOperation(x.HIDE_ON_CLOSE);
+                        x.setAlwaysOnTop (true);
+//        x.toFront();
+//        x.repaint();
+        
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -190,6 +200,16 @@ public class AdminMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        PopularItem x = new PopularItem();
+        x.setVisible(true);
+        x.setDefaultCloseOperation(x.HIDE_ON_CLOSE);
+                x.setAlwaysOnTop (true);
+//        x.toFront();
+//        x.repaint();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
