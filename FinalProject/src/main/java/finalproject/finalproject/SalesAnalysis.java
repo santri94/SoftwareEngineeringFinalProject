@@ -51,32 +51,41 @@ public class SalesAnalysis extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Monday ");
 
+        jLabel2.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("        Sales Analysis ");
 
         jLabel3.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel3.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tuesday");
 
+        jLabel4.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Thursday");
 
+        jLabel5.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Wednesday");
 
         jLabel6.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel6.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Saturday");
 
+        jLabel7.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Friday");
 
+        jLabel8.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Sunday");
 
+        jLabel9.setFont(new java.awt.Font("Malayalam MN", 1, 15)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("          Total Amont");
 
