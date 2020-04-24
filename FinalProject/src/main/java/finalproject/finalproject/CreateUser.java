@@ -81,7 +81,7 @@ public class CreateUser extends javax.swing.JFrame {
             }
         });
 
-        Phone.setForeground(new java.awt.Color(255, 0, 255));
+        Phone.setForeground(new java.awt.Color(51, 51, 51));
 
         FirstName.setForeground(new java.awt.Color(51, 51, 51));
         FirstName.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +94,7 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("   Type");
 
-        Type.setForeground(new java.awt.Color(255, 0, 255));
+        Type.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,9 +104,9 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("   Address");
 
-        City.setForeground(new java.awt.Color(255, 0, 255));
+        City.setForeground(new java.awt.Color(51, 51, 51));
 
-        Address.setForeground(new java.awt.Color(255, 0, 255));
+        Address.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel6.setBackground(new java.awt.Color(204, 204, 255));
         jLabel6.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -117,9 +117,9 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("  City");
 
-        ZipCode.setForeground(new java.awt.Color(255, 0, 255));
+        ZipCode.setForeground(new java.awt.Color(51, 51, 51));
 
-        State.setForeground(new java.awt.Color(255, 0, 255));
+        State.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel10.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,21 +129,21 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("   Email");
 
-        LastName.setForeground(new java.awt.Color(255, 0, 255));
+        LastName.setForeground(new java.awt.Color(51, 51, 51));
         LastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LastNameActionPerformed(evt);
             }
         });
 
-        Email.setForeground(new java.awt.Color(255, 0, 255));
+        Email.setForeground(new java.awt.Color(51, 51, 51));
         Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmailActionPerformed(evt);
             }
         });
 
-        Password.setForeground(new java.awt.Color(255, 0, 255));
+        Password.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel12.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,7 +153,7 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("   State");
 
-        ConfirmPassword.setForeground(new java.awt.Color(255, 0, 255));
+        ConfirmPassword.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
