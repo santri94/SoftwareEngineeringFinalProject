@@ -154,7 +154,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Appetizer.setBackground(new java.awt.Color(255, 255, 255));
+        Appetizer.setBackground(new java.awt.Color(255, 153, 0));
         Appetizer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Appetizer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -168,7 +168,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
         jLabel1.setText("Appetizer");
 
         javax.swing.GroupLayout AppetizerLayout = new javax.swing.GroupLayout(Appetizer);
@@ -190,7 +190,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         getContentPane().add(Appetizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 130, -1));
 
-        MainDish.setBackground(new java.awt.Color(255, 255, 255));
+        MainDish.setBackground(new java.awt.Color(255, 153, 0));
         MainDish.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         MainDish.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -204,7 +204,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
         jLabel2.setText("Pasta");
 
         javax.swing.GroupLayout MainDishLayout = new javax.swing.GroupLayout(MainDish);
@@ -214,19 +214,19 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(MainDishLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         MainDishLayout.setVerticalGroup(
             MainDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainDishLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(24, 24, 24))
         );
 
         getContentPane().add(MainDish, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 130, 90));
 
-        Dessert.setBackground(new java.awt.Color(255, 255, 255));
+        Dessert.setBackground(new java.awt.Color(255, 153, 0));
         Dessert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Dessert.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -240,7 +240,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
         jLabel3.setText("Steaks");
 
         javax.swing.GroupLayout DessertLayout = new javax.swing.GroupLayout(Dessert);
@@ -250,19 +250,19 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(DessertLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         DessertLayout.setVerticalGroup(
             DessertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DessertLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(26, 26, 26))
         );
 
         getContentPane().add(Dessert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, 90));
 
-        Drinks.setBackground(new java.awt.Color(255, 255, 255));
+        Drinks.setBackground(new java.awt.Color(255, 153, 0));
         Drinks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Drinks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -276,10 +276,10 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
         jLabel4.setText("Dessert&");
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
         jLabel6.setText("Drinks");
 
         javax.swing.GroupLayout DrinksLayout = new javax.swing.GroupLayout(Drinks);
@@ -291,7 +291,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         DrinksLayout.setVerticalGroup(
             DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,12 +305,16 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         getContentPane().add(Drinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 90));
 
-        Title.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        Title.setFont(new java.awt.Font("Hiragino Kaku Gothic StdN", 0, 36)); // NOI18N
+        Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setText("MENU");
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 800, -1));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setForeground(new java.awt.Color(204, 204, 204));
 
+        jTable1.setBackground(new java.awt.Color(255, 255, 153));
+        jTable1.setFont(new java.awt.Font("LiHei Pro", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -346,6 +350,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             jTable1.getColumnModel().getColumn(3).setPreferredWidth(32);
         }
 
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
         jButton1.setText("Remove");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -358,7 +364,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         AppetizerPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        BonelessWings.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        BonelessWings.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         BonelessWings.setText("Boneless Wings");
         BonelessWings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -369,7 +375,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        OnionRings.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        OnionRings.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         OnionRings.setText("Onion Rings");
         OnionRings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -380,7 +386,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Mozzarella.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Mozzarella.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Mozzarella.setText("Mozzarella Sticks");
         Mozzarella.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -391,7 +397,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Tacos.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Tacos.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Tacos.setText("Chicken Tacos");
         Tacos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -402,7 +408,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Pretzels.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Pretzels.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Pretzels.setText("Prestzels + Cheese Dip");
         Pretzels.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -413,7 +419,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Spinach.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Spinach.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Spinach.setText("Spinach + Artichoke Dip");
         Spinach.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -437,7 +443,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                     .addComponent(OnionRings, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BonelessWings)
                     .addComponent(Tacos))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         AppetizerPanelLayout.setVerticalGroup(
             AppetizerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,14 +460,14 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addComponent(Pretzels)
                 .addGap(20, 20, 20)
                 .addComponent(Spinach)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel6.add(AppetizerPanel, "card2");
 
         PastaPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        Meatball.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Meatball.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Meatball.setText("Meatball & Spaghetti");
         Meatball.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -472,7 +478,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        C_Alfredo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        C_Alfredo.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         C_Alfredo.setText("Chicken Alfredo");
         C_Alfredo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -483,7 +489,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        S_Alfredo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        S_Alfredo.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         S_Alfredo.setText("Shrimp Alfredo");
         S_Alfredo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -494,7 +500,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Penne.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Penne.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Penne.setText("Cheese Chicken Penne");
         Penne.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -505,7 +511,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        MacNCheese.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        MacNCheese.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         MacNCheese.setText("Mac&Cheese");
         MacNCheese.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -516,7 +522,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Carbonara.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Carbonara.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Carbonara.setText("Carbonara");
         Carbonara.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -540,7 +546,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                     .addComponent(S_Alfredo)
                     .addComponent(Penne)
                     .addComponent(MacNCheese))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         PastaPanelLayout.setVerticalGroup(
             PastaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,14 +563,14 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addComponent(MacNCheese)
                 .addGap(20, 20, 20)
                 .addComponent(Carbonara)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel6.add(PastaPanel, "card3");
 
         SteaksPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        S_TopSirloin.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        S_TopSirloin.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         S_TopSirloin.setText("6 OZ. Top Sirloin");
         S_TopSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -575,7 +581,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        E_TopSirloin.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        E_TopSirloin.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         E_TopSirloin.setText("8 OZ. Top Sirloin");
         E_TopSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -586,7 +592,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        ShrimpSirloin.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        ShrimpSirloin.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         ShrimpSirloin.setText("Shrimp & Parmesan Sirloin");
         ShrimpSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -597,7 +603,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Riblet.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Riblet.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Riblet.setText("Riblet Platter");
         Riblet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -608,7 +614,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Bourbon.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Bourbon.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Bourbon.setText("Bourbon Street Steak");
         Bourbon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -619,7 +625,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        DoubleRibs.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        DoubleRibs.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         DoubleRibs.setText("Double-Glazed Ribs");
         DoubleRibs.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -643,7 +649,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                     .addComponent(ShrimpSirloin)
                     .addComponent(Riblet)
                     .addComponent(Bourbon))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SteaksPanelLayout.setVerticalGroup(
             SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -660,14 +666,14 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addComponent(Bourbon)
                 .addGap(20, 20, 20)
                 .addComponent(DoubleRibs)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel6.add(SteaksPanel, "card4");
 
         DrinksPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        SoftDrinks.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        SoftDrinks.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         SoftDrinks.setText("Soft Drinks");
         SoftDrinks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -678,7 +684,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Lemonade.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Lemonade.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Lemonade.setText("Lemonade");
         Lemonade.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -689,7 +695,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        OrangeJuice.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        OrangeJuice.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         OrangeJuice.setText("Orange Juice");
         OrangeJuice.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -700,7 +706,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        CheeseCake.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        CheeseCake.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         CheeseCake.setText("Slice Cheese Cake");
         CheeseCake.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -711,7 +717,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Brownie.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Brownie.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Brownie.setText("Blue Ribbon Brownie");
         Brownie.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -722,7 +728,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Sundae.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        Sundae.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
         Sundae.setText("Chocolate Chip Sundae");
         Sundae.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -746,7 +752,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                     .addComponent(OrangeJuice)
                     .addComponent(Lemonade)
                     .addComponent(Sundae))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         DrinksPanelLayout.setVerticalGroup(
             DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -763,11 +769,13 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addComponent(Brownie)
                 .addGap(18, 18, 18)
                 .addComponent(Sundae)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel6.add(DrinksPanel, "card5");
 
+        submitOrder.setBackground(new java.awt.Color(51, 102, 255));
+        submitOrder.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
         submitOrder.setText("Place Order");
         submitOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -775,6 +783,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
+        viewStatus.setBackground(new java.awt.Color(102, 255, 102));
+        viewStatus.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
         viewStatus.setText("Status");
         viewStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -782,6 +792,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
+        payOrder.setBackground(new java.awt.Color(102, 255, 102));
+        payOrder.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
         payOrder.setText("Pay Order");
         payOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -789,6 +801,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
+        editOrder.setBackground(new java.awt.Color(102, 255, 102));
+        editOrder.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
         editOrder.setText("Edit Order");
         editOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -801,7 +815,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(137, Short.MAX_VALUE)
+                .addContainerGap(110, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -819,8 +833,6 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -830,8 +842,10 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                         .addGap(11, 11, 11)
                         .addComponent(payOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(submitOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                        .addComponent(submitOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1070, 530));
@@ -889,16 +903,16 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     private void MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MouseExited
         // TODO add your handling code here:
         if(evt.getSource()==Appetizer){
-            Appetizer.setBackground(new Color(255,255,255));
+            Appetizer.setBackground(new Color(255,153,0));
         }
         if(evt.getSource()==MainDish){
-            MainDish.setBackground(new Color(255,255,255));
+            MainDish.setBackground(new Color(255,153,0));
         }
         if(evt.getSource()==Dessert){
-            Dessert.setBackground(new Color(255,255,255));
+            Dessert.setBackground(new Color(255,153,0));
         }
         if(evt.getSource()==Drinks){
-            Drinks.setBackground(new Color(255,255,255));
+            Drinks.setBackground(new Color(255,153,0));
     }//GEN-LAST:event_MouseExited
 //     if(evt.getSource()==Pizza){
 //            Pizza.setForeground(new Color(0,0,0));
