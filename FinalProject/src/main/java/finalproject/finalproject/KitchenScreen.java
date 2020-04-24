@@ -44,7 +44,9 @@ public class KitchenScreen extends javax.swing.JFrame {
 
         setResizable(false);
 
-        Orders.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Orders.setBackground(new java.awt.Color(0, 102, 102));
+        Orders.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 255)));
+        Orders.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         Orders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -77,6 +79,7 @@ public class KitchenScreen extends javax.swing.JFrame {
             Orders.getColumnModel().getColumn(4).setResizable(false);
         }
 
+        updateOrders.setFont(new java.awt.Font("Arial Black", 1, 15)); // NOI18N
         updateOrders.setText("Update");
         updateOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +87,7 @@ public class KitchenScreen extends javax.swing.JFrame {
             }
         });
 
+        markAsReady.setFont(new java.awt.Font("Arial Black", 1, 15)); // NOI18N
         markAsReady.setText("Mark As Ready");
         markAsReady.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,16 +106,16 @@ public class KitchenScreen extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(177, 177, 177)
                 .addComponent(updateOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(114, 114, 114)
-                .addComponent(markAsReady, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(markAsReady, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(updateOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                     .addComponent(markAsReady, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))
