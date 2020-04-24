@@ -9,6 +9,9 @@ package finalproject.finalproject;
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 /**
  *
@@ -67,6 +70,8 @@ public class Database {
                         if (testUser.Email.equals(usernameEntered)&& testUser.Pass.equals(passwordEntered)) {
                             //JOptionPane.showMessageDialog(this, "Log In Succesfull");
                             //System.out.println("Log In Succesfull!");
+                            conn.close();
+                            //stmt.close();
                             return testUser;
                         }
                         else{
@@ -81,7 +86,7 @@ public class Database {
                 }
                     return null;
 
-                }
+            }
             
             public void RegisterUser(String email, String password, String type, String firstName, String lastName, String phone, String address ) throws Exception{
                 try {
@@ -91,12 +96,75 @@ public class Database {
                     String query = "INSERT INTO USERR(Email, Pass, Type, F_Name, L_Name, Phone, Address) VALUES ('"+email+"','"+password+"','"+type+"','"+firstName+"','"+lastName+"','"+phone+"','"+address+"')";
                     stmt = conn.createStatement();
                     stmt.executeUpdate(query);
+                    conn.close();
                     
                 } catch (Exception e) {
                     System.out.println(e);
                 }
                 
             }
+            
+            public void InsertItems(ArrayList<Item> tableOrderArrayList, int orderNumber, String waiter, int tableNumber) throws Exception{
+                try {
+                    //-------------------------------------------------------------------------------------
+                    //                              Getting Date
+                    //-------------------------------------------------------------------------------------
+                    LocalDateTime localDate = LocalDateTime.now();
+                    //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMMM dd, YYYY");
+                    //String date = dtf.format(localDate);
+                    
+                    String orderStatus = "IN KITCHEN";
+                    //-------------------------------------------------------------------------------------
+                    Statement stmt = null;
+                    Connection conn = getConnection();
+                    
+                    for(Item tmpItem : tableOrderArrayList){
+                        String query = "INSERT INTO ORDERS(itemId, orderNumber, itemName, orderStatus, waiter, tableNumber, date, price, qty) VALUES ('"+tmpItem.itemId+"','"+orderNumber+"','"+tmpItem.itemName+"','"+orderStatus+"','"+waiter+"','"+tableNumber+"','"+localDate+"','"+tmpItem.totalPrice+"','"+tmpItem.orderQty+"')";
+                        stmt = conn.createStatement();
+                        stmt.executeUpdate(query);
+                    }
+                    
+                    
+                    
+                    
+                    conn.close();
+                    
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                
+            }
+            
+            /*
+            public void GetOrders() throws Exception{
+                
+                try {
+                    
+                    Statement stmt = null;
+                    Connection conn = getConnection();
+                    String query = "SELECT * FROM ORDERS ORDER BY date DESC";
+                    stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery(query);
+                    while (rs.next()) {
+                        String email = rs.getString("Email");
+                        String userPassword = rs.getString("Pass");
+                        String type = rs.getString("Type");
+                        String firstName = rs.getString("F_Name");
+                        String lastName = rs.getString("L_Name");
+                        String phone = rs.getString("Phone");
+                        String address = rs.getString("Address");
+
+
+
+
+
+                    }
+                } catch (SQLException e ) {
+                    System.err.println(e);
+                }
+
+            }
+            */
             
             
         

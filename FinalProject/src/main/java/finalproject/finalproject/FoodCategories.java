@@ -5,9 +5,19 @@
  */
 package finalproject.finalproject;
 
+import com.mysql.cj.WarningListener;
+import java.util.Random;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,6 +27,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FoodCategories extends javax.swing.JFrame implements MouseListener {
     
+    public TableWindow myTableWindow;
+    public int tableOrderNumber;
+    public String waiterName;
+    public int thisTableNumber;
+    public DecimalFormat df = new DecimalFormat("#.00"); // two decimal places
+    ArrayList<Item> tableOrder = new ArrayList<>();
     
 
     /**
@@ -24,16 +40,43 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
      */
     public FoodCategories() {
         initComponents();
-        Salad.addMouseListener(this);
-        Soup.addMouseListener(this);
-        Pizza.addMouseListener(this);
-        Chicken.addMouseListener(this);
-        Cookie.addMouseListener(this);
-        Soda.addMouseListener(this);
+        viewStatus.setVisible(false);
+        editOrder.setVisible(false);
+        payOrder.setVisible(false);
+        BonelessWings.addMouseListener(this);
+        OnionRings.addMouseListener(this);
+        Mozzarella.addMouseListener(this);
+        Tacos.addMouseListener(this);
+        Pretzels.addMouseListener(this);
+        Spinach.addMouseListener(this);
+        Meatball.addMouseListener(this);
+        C_Alfredo.addMouseListener(this);
+        S_Alfredo.addMouseListener(this);
+        Penne.addMouseListener(this);
+        MacNCheese.addMouseListener(this);
+        Carbonara.addMouseListener(this);
+        S_TopSirloin.addMouseListener(this);
+        E_TopSirloin.addMouseListener(this);
+        ShrimpSirloin.addMouseListener(this);
+        Riblet.addMouseListener(this);
+        Bourbon.addMouseListener(this);
+        DoubleRibs.addMouseListener(this);
+        Lemonade.addMouseListener(this);
+        OrangeJuice.addMouseListener(this);
+        SoftDrinks.addMouseListener(this);
+        Sundae.addMouseListener(this);
+        CheeseCake.addMouseListener(this);
+        Brownie.addMouseListener(this);
+        
+        
         
     }
     
     DefaultTableModel model = new DefaultTableModel();
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,22 +96,45 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         jLabel3 = new javax.swing.JLabel();
         Drinks = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        Title = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         AppetizerPanel = new javax.swing.JPanel();
-        Salad = new javax.swing.JLabel();
-        Soup = new javax.swing.JLabel();
-        MainDishPanel = new javax.swing.JPanel();
-        Pizza = new javax.swing.JLabel();
-        Chicken = new javax.swing.JLabel();
-        DessertPanel = new javax.swing.JPanel();
-        Cookie = new javax.swing.JLabel();
+        BonelessWings = new javax.swing.JLabel();
+        OnionRings = new javax.swing.JLabel();
+        Mozzarella = new javax.swing.JLabel();
+        Tacos = new javax.swing.JLabel();
+        Pretzels = new javax.swing.JLabel();
+        Spinach = new javax.swing.JLabel();
+        PastaPanel = new javax.swing.JPanel();
+        Meatball = new javax.swing.JLabel();
+        C_Alfredo = new javax.swing.JLabel();
+        S_Alfredo = new javax.swing.JLabel();
+        Penne = new javax.swing.JLabel();
+        MacNCheese = new javax.swing.JLabel();
+        Carbonara = new javax.swing.JLabel();
+        SteaksPanel = new javax.swing.JPanel();
+        S_TopSirloin = new javax.swing.JLabel();
+        E_TopSirloin = new javax.swing.JLabel();
+        ShrimpSirloin = new javax.swing.JLabel();
+        Riblet = new javax.swing.JLabel();
+        Bourbon = new javax.swing.JLabel();
+        DoubleRibs = new javax.swing.JLabel();
         DrinksPanel = new javax.swing.JPanel();
-        Soda = new javax.swing.JLabel();
+        SoftDrinks = new javax.swing.JLabel();
+        Lemonade = new javax.swing.JLabel();
+        OrangeJuice = new javax.swing.JLabel();
+        CheeseCake = new javax.swing.JLabel();
+        Brownie = new javax.swing.JLabel();
+        Sundae = new javax.swing.JLabel();
+        submitOrder = new javax.swing.JButton();
+        viewStatus = new javax.swing.JButton();
+        payOrder = new javax.swing.JButton();
+        editOrder = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -81,15 +147,14 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
-        setMaximumSize(new java.awt.Dimension(900, 580));
-        setMinimumSize(new java.awt.Dimension(900, 580));
-        setPreferredSize(new java.awt.Dimension(900, 580));
+        setMaximumSize(new java.awt.Dimension(950, 580));
+        setMinimumSize(new java.awt.Dimension(950, 580));
+        setPreferredSize(new java.awt.Dimension(950, 580));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Appetizer.setBackground(new java.awt.Color(255, 255, 255));
+        Appetizer.setBackground(new java.awt.Color(255, 153, 0));
         Appetizer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Appetizer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -103,7 +168,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
         jLabel1.setText("Appetizer");
 
         javax.swing.GroupLayout AppetizerLayout = new javax.swing.GroupLayout(Appetizer);
@@ -112,7 +177,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             AppetizerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AppetizerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         AppetizerLayout.setVerticalGroup(
@@ -123,9 +188,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Appetizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, -1));
+        getContentPane().add(Appetizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 130, -1));
 
-        MainDish.setBackground(new java.awt.Color(255, 255, 255));
+        MainDish.setBackground(new java.awt.Color(255, 153, 0));
         MainDish.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         MainDish.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -139,8 +204,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel2.setText("MainDish");
+        jLabel2.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
+        jLabel2.setText("Pasta");
 
         javax.swing.GroupLayout MainDishLayout = new javax.swing.GroupLayout(MainDish);
         MainDish.setLayout(MainDishLayout);
@@ -149,19 +214,19 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(MainDishLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         MainDishLayout.setVerticalGroup(
             MainDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainDishLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(24, 24, 24))
         );
 
-        getContentPane().add(MainDish, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 150, 90));
+        getContentPane().add(MainDish, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 130, 90));
 
-        Dessert.setBackground(new java.awt.Color(255, 255, 255));
+        Dessert.setBackground(new java.awt.Color(255, 153, 0));
         Dessert.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Dessert.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -175,8 +240,8 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel3.setText("Dessert");
+        jLabel3.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
+        jLabel3.setText("Steaks");
 
         javax.swing.GroupLayout DessertLayout = new javax.swing.GroupLayout(Dessert);
         Dessert.setLayout(DessertLayout);
@@ -185,19 +250,19 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             .addGroup(DessertLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         DessertLayout.setVerticalGroup(
             DessertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DessertLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(26, 26, 26))
         );
 
-        getContentPane().add(Dessert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 150, 90));
+        getContentPane().add(Dessert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, 90));
 
-        Drinks.setBackground(new java.awt.Color(255, 255, 255));
+        Drinks.setBackground(new java.awt.Color(255, 153, 0));
         Drinks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         Drinks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -211,8 +276,11 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel4.setText("Drinks");
+        jLabel4.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
+        jLabel4.setText("Dessert&");
+
+        jLabel6.setFont(new java.awt.Font("Marker Felt", 0, 24)); // NOI18N
+        jLabel6.setText("Drinks");
 
         javax.swing.GroupLayout DrinksLayout = new javax.swing.GroupLayout(Drinks);
         Drinks.setLayout(DrinksLayout);
@@ -220,25 +288,33 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGroup(DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         DrinksLayout.setVerticalGroup(
             DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap()
                 .addComponent(jLabel4)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Drinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 150, 90));
+        getContentPane().add(Drinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 90));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
-        jLabel5.setText("MENU");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, -1));
+        Title.setFont(new java.awt.Font("Hiragino Kaku Gothic StdN", 0, 36)); // NOI18N
+        Title.setForeground(new java.awt.Color(255, 255, 255));
+        Title.setText("MENU");
+        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 800, -1));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setForeground(new java.awt.Color(204, 204, 204));
 
+        jTable1.setBackground(new java.awt.Color(255, 255, 153));
+        jTable1.setFont(new java.awt.Font("LiHei Pro", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -248,7 +324,7 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
@@ -265,12 +341,18 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(80);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(5);
             jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(18);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(32);
         }
 
-        jButton1.setText("Remove Order");
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
+        jButton1.setText("Remove");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -282,9 +364,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
 
         AppetizerPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        Salad.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Salad.setText("Salad");
-        Salad.addMouseListener(new java.awt.event.MouseAdapter() {
+        BonelessWings.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        BonelessWings.setText("Boneless Wings");
+        BonelessWings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -293,9 +375,53 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Soup.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Soup.setText("Soup");
-        Soup.addMouseListener(new java.awt.event.MouseAdapter() {
+        OnionRings.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        OnionRings.setText("Onion Rings");
+        OnionRings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Mozzarella.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Mozzarella.setText("Mozzarella Sticks");
+        Mozzarella.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Tacos.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Tacos.setText("Chicken Tacos");
+        Tacos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Pretzels.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Pretzels.setText("Prestzels + Cheese Dip");
+        Pretzels.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Spinach.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Spinach.setText("Spinach + Artichoke Dip");
+        Spinach.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -309,29 +435,41 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         AppetizerPanelLayout.setHorizontalGroup(
             AppetizerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AppetizerPanelLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(20, 20, 20)
                 .addGroup(AppetizerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Salad)
-                    .addComponent(Soup))
-                .addContainerGap(149, Short.MAX_VALUE))
+                    .addComponent(Spinach)
+                    .addComponent(Pretzels)
+                    .addComponent(Mozzarella)
+                    .addComponent(OnionRings, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BonelessWings)
+                    .addComponent(Tacos))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         AppetizerPanelLayout.setVerticalGroup(
             AppetizerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AppetizerPanelLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(Salad)
-                .addGap(18, 18, 18)
-                .addComponent(Soup)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(BonelessWings)
+                .addGap(20, 20, 20)
+                .addComponent(OnionRings)
+                .addGap(20, 20, 20)
+                .addComponent(Mozzarella)
+                .addGap(20, 20, 20)
+                .addComponent(Tacos)
+                .addGap(20, 20, 20)
+                .addComponent(Pretzels)
+                .addGap(20, 20, 20)
+                .addComponent(Spinach)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel6.add(AppetizerPanel, "card2");
 
-        MainDishPanel.setBackground(new java.awt.Color(255, 255, 255));
+        PastaPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        Pizza.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Pizza.setText("Pizza");
-        Pizza.addMouseListener(new java.awt.event.MouseAdapter() {
+        Meatball.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Meatball.setText("Meatball & Spaghetti");
+        Meatball.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -340,9 +478,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        Chicken.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Chicken.setText("Chicken");
-        Chicken.addMouseListener(new java.awt.event.MouseAdapter() {
+        C_Alfredo.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        C_Alfredo.setText("Chicken Alfredo");
+        C_Alfredo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -351,34 +489,9 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        javax.swing.GroupLayout MainDishPanelLayout = new javax.swing.GroupLayout(MainDishPanel);
-        MainDishPanel.setLayout(MainDishPanelLayout);
-        MainDishPanelLayout.setHorizontalGroup(
-            MainDishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainDishPanelLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(MainDishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Chicken)
-                    .addComponent(Pizza))
-                .addContainerGap(127, Short.MAX_VALUE))
-        );
-        MainDishPanelLayout.setVerticalGroup(
-            MainDishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainDishPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(Pizza)
-                .addGap(18, 18, 18)
-                .addComponent(Chicken)
-                .addContainerGap(269, Short.MAX_VALUE))
-        );
-
-        jPanel6.add(MainDishPanel, "card3");
-
-        DessertPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        Cookie.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Cookie.setText("Cookie");
-        Cookie.addMouseListener(new java.awt.event.MouseAdapter() {
+        S_Alfredo.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        S_Alfredo.setText("Shrimp Alfredo");
+        S_Alfredo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -387,30 +500,237 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             }
         });
 
-        javax.swing.GroupLayout DessertPanelLayout = new javax.swing.GroupLayout(DessertPanel);
-        DessertPanel.setLayout(DessertPanelLayout);
-        DessertPanelLayout.setHorizontalGroup(
-            DessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DessertPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(Cookie)
-                .addContainerGap(134, Short.MAX_VALUE))
+        Penne.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Penne.setText("Cheese Chicken Penne");
+        Penne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        MacNCheese.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        MacNCheese.setText("Mac&Cheese");
+        MacNCheese.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Carbonara.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Carbonara.setText("Carbonara");
+        Carbonara.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PastaPanelLayout = new javax.swing.GroupLayout(PastaPanel);
+        PastaPanel.setLayout(PastaPanelLayout);
+        PastaPanelLayout.setHorizontalGroup(
+            PastaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PastaPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(PastaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Carbonara)
+                    .addComponent(C_Alfredo)
+                    .addComponent(Meatball)
+                    .addComponent(S_Alfredo)
+                    .addComponent(Penne)
+                    .addComponent(MacNCheese))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
-        DessertPanelLayout.setVerticalGroup(
-            DessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DessertPanelLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(Cookie)
-                .addContainerGap(309, Short.MAX_VALUE))
+        PastaPanelLayout.setVerticalGroup(
+            PastaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PastaPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Meatball)
+                .addGap(20, 20, 20)
+                .addComponent(C_Alfredo)
+                .addGap(20, 20, 20)
+                .addComponent(S_Alfredo)
+                .addGap(20, 20, 20)
+                .addComponent(Penne)
+                .addGap(20, 20, 20)
+                .addComponent(MacNCheese)
+                .addGap(20, 20, 20)
+                .addComponent(Carbonara)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        jPanel6.add(DessertPanel, "card4");
+        jPanel6.add(PastaPanel, "card3");
+
+        SteaksPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        S_TopSirloin.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        S_TopSirloin.setText("6 OZ. Top Sirloin");
+        S_TopSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        E_TopSirloin.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        E_TopSirloin.setText("8 OZ. Top Sirloin");
+        E_TopSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        ShrimpSirloin.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        ShrimpSirloin.setText("Shrimp & Parmesan Sirloin");
+        ShrimpSirloin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Riblet.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Riblet.setText("Riblet Platter");
+        Riblet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Bourbon.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Bourbon.setText("Bourbon Street Steak");
+        Bourbon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        DoubleRibs.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        DoubleRibs.setText("Double-Glazed Ribs");
+        DoubleRibs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SteaksPanelLayout = new javax.swing.GroupLayout(SteaksPanel);
+        SteaksPanel.setLayout(SteaksPanelLayout);
+        SteaksPanelLayout.setHorizontalGroup(
+            SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SteaksPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DoubleRibs)
+                    .addComponent(E_TopSirloin)
+                    .addComponent(S_TopSirloin)
+                    .addComponent(ShrimpSirloin)
+                    .addComponent(Riblet)
+                    .addComponent(Bourbon))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        SteaksPanelLayout.setVerticalGroup(
+            SteaksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SteaksPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(S_TopSirloin)
+                .addGap(20, 20, 20)
+                .addComponent(E_TopSirloin)
+                .addGap(20, 20, 20)
+                .addComponent(ShrimpSirloin)
+                .addGap(20, 20, 20)
+                .addComponent(Riblet)
+                .addGap(20, 20, 20)
+                .addComponent(Bourbon)
+                .addGap(20, 20, 20)
+                .addComponent(DoubleRibs)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        jPanel6.add(SteaksPanel, "card4");
 
         DrinksPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        Soda.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        Soda.setText("Soda");
-        Soda.addMouseListener(new java.awt.event.MouseAdapter() {
+        SoftDrinks.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        SoftDrinks.setText("Soft Drinks");
+        SoftDrinks.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Lemonade.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Lemonade.setText("Lemonade");
+        Lemonade.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        OrangeJuice.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        OrangeJuice.setText("Orange Juice");
+        OrangeJuice.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        CheeseCake.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        CheeseCake.setText("Slice Cheese Cake");
+        CheeseCake.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Brownie.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Brownie.setText("Blue Ribbon Brownie");
+        Brownie.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+
+        Sundae.setFont(new java.awt.Font("Krungthep", 0, 24)); // NOI18N
+        Sundae.setText("Chocolate Chip Sundae");
+        Sundae.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuMouseEntered(evt);
             }
@@ -424,47 +744,111 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         DrinksPanelLayout.setHorizontalGroup(
             DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksPanelLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(Soda)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SoftDrinks)
+                    .addComponent(Brownie)
+                    .addComponent(CheeseCake)
+                    .addComponent(OrangeJuice)
+                    .addComponent(Lemonade)
+                    .addComponent(Sundae))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         DrinksPanelLayout.setVerticalGroup(
             DrinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DrinksPanelLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(Soda)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(SoftDrinks)
+                .addGap(20, 20, 20)
+                .addComponent(Lemonade)
+                .addGap(18, 18, 18)
+                .addComponent(OrangeJuice)
+                .addGap(24, 24, 24)
+                .addComponent(CheeseCake)
+                .addGap(18, 18, 18)
+                .addComponent(Brownie)
+                .addGap(18, 18, 18)
+                .addComponent(Sundae)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel6.add(DrinksPanel, "card5");
+
+        submitOrder.setBackground(new java.awt.Color(51, 102, 255));
+        submitOrder.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
+        submitOrder.setText("Place Order");
+        submitOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitOrderActionPerformed(evt);
+            }
+        });
+
+        viewStatus.setBackground(new java.awt.Color(102, 255, 102));
+        viewStatus.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
+        viewStatus.setText("Status");
+        viewStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewStatusActionPerformed(evt);
+            }
+        });
+
+        payOrder.setBackground(new java.awt.Color(102, 255, 102));
+        payOrder.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
+        payOrder.setText("Pay Order");
+        payOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                payOrderActionPerformed(evt);
+            }
+        });
+
+        editOrder.setBackground(new java.awt.Color(102, 255, 102));
+        editOrder.setFont(new java.awt.Font("LiHei Pro", 0, 13)); // NOI18N
+        editOrder.setText("Edit Order");
+        editOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(162, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(110, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(200, 200, 200))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(submitOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(payOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(editOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(161, 161, 161))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(339, 339, 339)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(viewStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(editOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(payOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(submitOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1070, 520));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1070, 530));
 
         pack();
         setLocationRelativeTo(null);
@@ -474,26 +858,26 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
         // TODO add your handling code here:
         if(evt.getSource()==Appetizer){
             AppetizerPanel.setVisible(true);
-            MainDishPanel.setVisible(false);
-            DessertPanel.setVisible(false);
+            PastaPanel.setVisible(false);
+            SteaksPanel.setVisible(false);
             DrinksPanel.setVisible(false);
         }
         if(evt.getSource()==MainDish){
             AppetizerPanel.setVisible(false);
-            MainDishPanel.setVisible(true);
-            DessertPanel.setVisible(false);
+            PastaPanel.setVisible(true);
+            SteaksPanel.setVisible(false);
             DrinksPanel.setVisible(false);
         }
         if(evt.getSource()==Dessert){
             AppetizerPanel.setVisible(false);
-            MainDishPanel.setVisible(false);
-            DessertPanel.setVisible(true);
+            PastaPanel.setVisible(false);
+            SteaksPanel.setVisible(true);
             DrinksPanel.setVisible(false);
         }
         if(evt.getSource()==Drinks){
             AppetizerPanel.setVisible(false);
-            MainDishPanel.setVisible(false);
-            DessertPanel.setVisible(false);
+            PastaPanel.setVisible(false);
+            SteaksPanel.setVisible(false);
             DrinksPanel.setVisible(true);
         }
     }//GEN-LAST:event_MouseClicked
@@ -519,16 +903,16 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     private void MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MouseExited
         // TODO add your handling code here:
         if(evt.getSource()==Appetizer){
-            Appetizer.setBackground(new Color(255,255,255));
+            Appetizer.setBackground(new Color(255,153,0));
         }
         if(evt.getSource()==MainDish){
-            MainDish.setBackground(new Color(255,255,255));
+            MainDish.setBackground(new Color(255,153,0));
         }
         if(evt.getSource()==Dessert){
-            Dessert.setBackground(new Color(255,255,255));
+            Dessert.setBackground(new Color(255,153,0));
         }
         if(evt.getSource()==Drinks){
-            Drinks.setBackground(new Color(255,255,255));
+            Drinks.setBackground(new Color(255,153,0));
     }//GEN-LAST:event_MouseExited
 //     if(evt.getSource()==Pizza){
 //            Pizza.setForeground(new Color(0,0,0));
@@ -539,44 +923,156 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     }
     
     private void menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseEntered
-         if(evt.getSource()==Salad){
-            Salad.setForeground(new Color(80,80,80));
+         if(evt.getSource()==BonelessWings){
+            BonelessWings.setForeground(new Color(80,80,80));
         }
-         if(evt.getSource()==Soup){
-            Soup.setForeground(new Color(80,80,80));
+         if(evt.getSource()==OnionRings){
+            OnionRings.setForeground(new Color(80,80,80));
         }
-        if(evt.getSource()==Pizza){
-            Pizza.setForeground(new Color(80,80,80));
+          if(evt.getSource()==Mozzarella){
+            Mozzarella.setForeground(new Color(80,80,80));
         }
-        if(evt.getSource()==Chicken){
-            Chicken.setForeground(new Color(80,80,80));
+           if(evt.getSource()==Tacos){
+            Tacos.setForeground(new Color(80,80,80));
         }
-         if(evt.getSource()==Cookie){
-            Cookie.setForeground(new Color(80,80,80));
-        } if(evt.getSource()==Soda){
-            Soda.setForeground(new Color(80,80,80));
+            if(evt.getSource()==Pretzels){
+            Pretzels.setForeground(new Color(80,80,80));
         }
+             if(evt.getSource()==Spinach){
+            Spinach.setForeground(new Color(80,80,80));
+        }
+        
+        if(evt.getSource()==Meatball){
+            Meatball.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==C_Alfredo){
+            C_Alfredo.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==S_Alfredo){
+            S_Alfredo.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==Penne){
+            Penne.setForeground(new Color(80,80,80));
+        }
+           if(evt.getSource()==MacNCheese){
+            MacNCheese.setForeground(new Color(80,80,80));
+        }
+            if(evt.getSource()==Carbonara){
+            Carbonara.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==S_TopSirloin){
+            S_TopSirloin.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==E_TopSirloin){
+            E_TopSirloin.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==ShrimpSirloin){
+            ShrimpSirloin.setForeground(new Color(80,80,80));
+        }
+         if(evt.getSource()==Riblet){
+            Riblet.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==Bourbon){
+            Bourbon.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==DoubleRibs){
+            DoubleRibs.setForeground(new Color(80,80,80));
+        } 
+        if(evt.getSource()==SoftDrinks){
+            SoftDrinks.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==Lemonade){
+            Lemonade.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==OrangeJuice){
+            OrangeJuice.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==CheeseCake){
+            CheeseCake.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==Brownie){
+            Brownie.setForeground(new Color(80,80,80));
+        }
+        if(evt.getSource()==Sundae){
+            Sundae.setForeground(new Color(80,80,80));
+        }
+        
 // TODO add your handling code here:
     }//GEN-LAST:event_menuMouseEntered
 
     private void menuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseExited
         // TODO add your handling code here:
-           if(evt.getSource()==Salad){
-            Salad.setForeground(new Color(0,0,0));
+           if(evt.getSource()==BonelessWings){
+            BonelessWings.setForeground(new Color(0,0,0));
         }
-         if(evt.getSource()==Soup){
-            Soup.setForeground(new Color(0,0,0));
+         if(evt.getSource()==OnionRings){
+            OnionRings.setForeground(new Color(0,0,0));
         }
-           if(evt.getSource()==Pizza){
-            Pizza.setForeground(new Color(0,0,0));
+         if(evt.getSource()==Mozzarella){
+            Mozzarella.setForeground(new Color(0,0,0));
         }
-        if(evt.getSource()==Chicken){
-            Chicken.setForeground(new Color(0,0,0));
+         if(evt.getSource()==Tacos){
+            Tacos.setForeground(new Color(0,0,0));
         }
-         if(evt.getSource()==Cookie){
-            Cookie.setForeground(new Color(0,0,0));
-        } if(evt.getSource()==Soda){
-            Soda.setForeground(new Color(0,0,0));
+         if(evt.getSource()==Pretzels){
+            Pretzels.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==Spinach){
+            Spinach.setForeground(new Color(0,0,0));
+        }
+           if(evt.getSource()==Meatball){
+            Meatball.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==C_Alfredo){
+            C_Alfredo.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==S_Alfredo){
+            S_Alfredo.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==Penne){
+            Penne.setForeground(new Color(0,0,0));
+        }
+           if(evt.getSource()==MacNCheese){
+            MacNCheese.setForeground(new Color(0,0,0));
+        }
+            if(evt.getSource()==Carbonara){
+            Carbonara.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==S_TopSirloin){
+            S_TopSirloin.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==E_TopSirloin){
+            E_TopSirloin.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==ShrimpSirloin){
+            ShrimpSirloin.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==Riblet){
+            Riblet.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==Bourbon){
+            Bourbon.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==DoubleRibs){
+            DoubleRibs.setForeground(new Color(0,0,0));
+        }  
+         if(evt.getSource()==SoftDrinks){
+            SoftDrinks.setForeground(new Color(0,0,0));
+        }
+         if(evt.getSource()==Lemonade){
+            Lemonade.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==OrangeJuice){
+            OrangeJuice.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==CheeseCake){
+            CheeseCake.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==Brownie){
+            Brownie.setForeground(new Color(0,0,0));
+        }
+        if(evt.getSource()==Sundae){
+            Sundae.setForeground(new Color(0,0,0));
         }
     }//GEN-LAST:event_menuMouseExited
 
@@ -590,6 +1086,339 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void submitOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitOrderActionPerformed
+        
+        Random random=new Random();
+        int orderNumber = random.nextInt(1000000 - 1000 + 1) + 1000; // this has to be a ramdon number between 1000 and 1,000,000
+        
+        if (jTable1.getRowCount() == 0) {
+            JFrame tmp = new JFrame();
+            tmp.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(tmp, "Please enter Some Items First");
+        }
+        else
+        {
+            for (int i = 0; i < jTable1.getRowCount(); i++) { 
+                String itemId;
+                String itemName = jTable1.getValueAt(i, 0).toString(); //column 0 for name;
+                //--------------------------------------------------------------------------------------
+                //                              Getting itemID
+                //--------------------------------------------------------------------------------------
+                if (itemName.equals("BonelessWings")) {
+                    itemId = "F101";
+                }
+                else if (itemName.equals("OnionRings")) {
+                    itemId = "F102";
+                }
+                else if (itemName.equals("MozzarellaSticks")) {
+                    itemId = "F103";
+                }
+                else if (itemName.equals("ChickenTacos")) {
+                    itemId = "F104";
+                }
+                else if (itemName.equals("Pretzels")) {
+                    itemId = "F105";
+                }
+                else if (itemName.equals("Spinach")) {
+                    itemId = "F106";
+                }
+                else if (itemName.equals("MeatballSpaghetti")) {
+                    itemId = "F107";
+                }
+                else if (itemName.equals("ChickenAlfredo")) {
+                    itemId = "F108";
+                }
+                else if (itemName.equals("ShrimpAlfredo")) {
+                    itemId = "F109";
+                }
+                else if (itemName.equals("Penne")) {
+                    itemId = "F110";
+                }
+                else if (itemName.equals("MacNCheese")) {
+                    itemId = "F111";
+                }
+                else if (itemName.equals("Carbonara")) {
+                    itemId = "F112";
+                }
+                else if (itemName.equals("6OZ TopSirloin")) {
+                    itemId = "F113";
+                }
+                else if (itemName.equals("8OZ TopSirloin")) {
+                    itemId = "F114";
+                }
+                else if (itemName.equals("ShrimpSirloin")) {
+                    itemId = "F115";
+                }
+                else if (itemName.equals("Riblet")) {
+                    itemId = "F116";
+                }
+                else if (itemName.equals("Bourbon")) {
+                    itemId = "F117";
+                }
+                else if (itemName.equals("DoubleRibs")) {
+                    itemId = "F118";
+                }
+                else if (itemName.equals("SoftDrinks")) {
+                    itemId = "F119";
+                }
+                else if (itemName.equals("Lemonade")) {
+                    itemId = "F120";
+                }
+                else if (itemName.equals("OrangeJuice")) {
+                    itemId = "F121";
+                }
+                else if (itemName.equals("CheeseCake")) {
+                    itemId = "F122";
+                }
+                else if (itemName.equals("Brownie")) {
+                    itemId = "F123";
+                }
+                else{
+                    itemId = "F124"; // for Sundae, which is the last one
+                }
+                //--------------------------------------------------------------------------------------
+                
+                int orderQty = (int) jTable1.getValueAt(i, 2); //column 2 for qty;
+                double totalPrice = (double) jTable1.getValueAt(i, 3); //column 3 for totalPrice;
+                Item tmp = new Item(itemId, itemName, orderQty, totalPrice);
+                
+                tableOrder.add(tmp);
+            }
+            
+        
+            //Get total price of the order
+            double priceForThisOrder = 0;
+            
+            for(Item itemTmp : tableOrder){
+                priceForThisOrder += itemTmp.totalPrice;
+            }
+            
+            //set the table order variable for this order, use to check order status
+            tableOrderNumber = orderNumber;
+            Title.setText("MENU                   ORDER # "+ tableOrderNumber + " -- $" + df.format(priceForThisOrder));
+            
+            //---------------------------------------------------------------------------------------------
+            //          Down here we want to insert these list of items into our database.
+            //---------------------------------------------------------------------------------------------
+            JFrame tmp = new JFrame();
+            tmp.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(tmp, "Number of items : " + tableOrder.size());
+            
+            Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+            try {
+                myDatabase.InsertItems(tableOrder, tableOrderNumber, waiterName, thisTableNumber);
+            } catch (Exception ex) {
+                Logger.getLogger(FoodCategories.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
+            //---------------------------------------------------------------------------------------------
+
+            //we can disable the place order button now and display edit order button and pay order
+            submitOrder.setVisible(false);
+            jButton1.setVisible(false);
+            viewStatus.setVisible(true);
+            editOrder.setVisible(true);
+            
+            
+            //disable first window
+            BonelessWings.setVisible(false);
+            OnionRings.setVisible(false);
+            Mozzarella.setVisible(false);
+            Tacos.setVisible(false);
+            Pretzels.setVisible(false);
+            Spinach.setVisible(false);
+            
+            //disable second window
+            Meatball.setVisible(false);
+            C_Alfredo.setVisible(false);
+            S_Alfredo.setVisible(false);
+            Penne.setVisible(false);
+            MacNCheese.setVisible(false);
+            Carbonara.setVisible(false);
+            
+            //disable Third window
+            S_TopSirloin.setVisible(false);
+            E_TopSirloin.setVisible(false);
+            ShrimpSirloin.setVisible(false);
+            Riblet.setVisible(false);
+            Bourbon.setVisible(false);
+            DoubleRibs.setVisible(false);
+            
+            //disable Third window
+            SoftDrinks.setVisible(false);
+            Lemonade.setVisible(false);
+            OrangeJuice.setVisible(false);
+            CheeseCake.setVisible(false);
+            Brownie.setVisible(false);
+            Sundae.setVisible(false);
+            
+            //Set table color to yellow
+            
+            
+        
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_submitOrderActionPerformed
+
+    private void viewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStatusActionPerformed
+        // TODO add your handling code here:
+        // check status in database.
+        // if status is ready then enable pay order
+        String ORDERSTATUS = "IN KITCHEN";
+        int countItemsReady = 0;
+        ArrayList<String> itemsStatus = new ArrayList<>();
+        
+        Database.DatabaseFunctions myDatabase = new Database.DatabaseFunctions();
+        
+        try {
+            Connection conn = myDatabase.getConnection();
+            
+            Statement stmt = null;
+            String query = "SELECT itemId, orderStatus FROM ORDERS WHERE orderNumber ='"+tableOrderNumber+"'";
+            //String query = "SELECT * FROM ORDERS ORDER BY date DESC";
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            
+            while (rs.next()) 
+            {
+                
+                String itemId = rs.getString("itemId");
+                String orderStatus = rs.getString("orderStatus");
+                
+                if (orderStatus.equals("READY")) {
+                    countItemsReady += 1;
+                }
+                
+                itemsStatus.add(orderStatus);
+            
+            }
+            conn.close();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(KitchenScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        if (itemsStatus.size() == countItemsReady) { //if all items in this order are ready, set ORDERSTATUS as READY
+            ORDERSTATUS = "READY";
+            JFrame tmp = new JFrame();
+            tmp.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(tmp, ORDERSTATUS);
+            payOrder.setVisible(true);
+        }
+        else{
+            JFrame tmp = new JFrame();
+            tmp.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(tmp, ORDERSTATUS);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_viewStatusActionPerformed
+
+    private void payOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payOrderActionPerformed
+        
+        //-------------------------------------------------------------------------------------------
+        // Need to set everything back as ready table, clean table order, clean table item list ...
+        //-------------------------------------------------------------------------------------------
+        tableOrderNumber = 0;
+        waiterName = "";
+        tableOrder.clear();
+        
+        //empty table of orders
+        
+        DefaultTableModel ordersTableModel = new DefaultTableModel();
+        ordersTableModel = (DefaultTableModel) jTable1.getModel();
+        
+        int rowCount = ordersTableModel.getRowCount();
+        //Remove rows one by one from the end of the table
+        for (int i = rowCount - 1; i >= 0; i--) {
+            ordersTableModel.removeRow(i);
+        }
+        
+        Title.setText("MENU");
+        
+        //we can disable the place order button now and display edit order button and pay order
+            submitOrder.setVisible(true);
+            jButton1.setVisible(true);
+            viewStatus.setVisible(false);
+            editOrder.setVisible(false);
+            payOrder.setVisible(false);
+            
+            
+            //disable first window
+            BonelessWings.setVisible(true);
+            OnionRings.setVisible(true);
+            Mozzarella.setVisible(true);
+            Tacos.setVisible(true);
+            Pretzels.setVisible(true);
+            Spinach.setVisible(true);
+            
+            //disable second window
+            Meatball.setVisible(true);
+            C_Alfredo.setVisible(true);
+            S_Alfredo.setVisible(true);
+            Penne.setVisible(true);
+            MacNCheese.setVisible(true);
+            Carbonara.setVisible(true);
+            
+            //disable Third window
+            S_TopSirloin.setVisible(true);
+            E_TopSirloin.setVisible(true);
+            ShrimpSirloin.setVisible(true);
+            Riblet.setVisible(true);
+            Bourbon.setVisible(true);
+            DoubleRibs.setVisible(true);
+            
+            //disable Third window
+            SoftDrinks.setVisible(true);
+            Lemonade.setVisible(true);
+            OrangeJuice.setVisible(true);
+            CheeseCake.setVisible(true);
+            Brownie.setVisible(true);
+            Sundae.setVisible(true);
+        //-------------------------------------------------------------------------------------------
+
+        //-------------------------------------------------------------------------------------------
+        // Need to check tableNumber then proceed to set this table to red
+        //-------------------------------------------------------------------------------------------
+
+        if (thisTableNumber == 1) {
+            myTableWindow.T1.setBackground(Color.red);
+            myTableWindow.OrderT1.setVisible(false);
+        }
+        else if (thisTableNumber == 2) {
+            myTableWindow.T2.setBackground(Color.red);
+            myTableWindow.OrderT2.setVisible(false);
+        }
+        else if (thisTableNumber == 3) {
+            myTableWindow.T3.setBackground(Color.red);
+            myTableWindow.OrderT3.setVisible(false);
+        }
+        else{ // table 4
+            myTableWindow.T4.setBackground(Color.red);
+            myTableWindow.OrderT4.setVisible(false);
+        }
+        //-------------------------------------------------------------------------------------------
+
+        
+        JFrame tmp = new JFrame();
+        tmp.setAlwaysOnTop(true);
+        JOptionPane.showMessageDialog(tmp, " ORDER WAS PAID ");
+        
+        this.hide();
+           
+        
+    }//GEN-LAST:event_payOrderActionPerformed
+
+    private void editOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editOrderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editOrderActionPerformed
         
     
    
@@ -601,39 +1430,62 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Appetizer;
     private javax.swing.JPanel AppetizerPanel;
-    private javax.swing.JLabel Chicken;
-    private javax.swing.JLabel Cookie;
+    private javax.swing.JLabel BonelessWings;
+    private javax.swing.JLabel Bourbon;
+    private javax.swing.JLabel Brownie;
+    private javax.swing.JLabel C_Alfredo;
+    private javax.swing.JLabel Carbonara;
+    private javax.swing.JLabel CheeseCake;
     private javax.swing.JPanel Dessert;
-    private javax.swing.JPanel DessertPanel;
+    private javax.swing.JLabel DoubleRibs;
     private javax.swing.JPanel Drinks;
     private javax.swing.JPanel DrinksPanel;
+    private javax.swing.JLabel E_TopSirloin;
+    private javax.swing.JLabel Lemonade;
+    private javax.swing.JLabel MacNCheese;
     private javax.swing.JPanel MainDish;
-    private javax.swing.JPanel MainDishPanel;
-    private javax.swing.JLabel Pizza;
-    private javax.swing.JLabel Salad;
-    private javax.swing.JLabel Soda;
-    private javax.swing.JLabel Soup;
+    private javax.swing.JLabel Meatball;
+    private javax.swing.JLabel Mozzarella;
+    private javax.swing.JLabel OnionRings;
+    private javax.swing.JLabel OrangeJuice;
+    private javax.swing.JPanel PastaPanel;
+    private javax.swing.JLabel Penne;
+    private javax.swing.JLabel Pretzels;
+    private javax.swing.JLabel Riblet;
+    private javax.swing.JLabel S_Alfredo;
+    private javax.swing.JLabel S_TopSirloin;
+    private javax.swing.JLabel ShrimpSirloin;
+    private javax.swing.JLabel SoftDrinks;
+    private javax.swing.JLabel Spinach;
+    private javax.swing.JPanel SteaksPanel;
+    private javax.swing.JLabel Sundae;
+    private javax.swing.JLabel Tacos;
+    private javax.swing.JLabel Title;
+    private javax.swing.JButton editOrder;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton payOrder;
+    private javax.swing.JButton submitOrder;
+    private javax.swing.JButton viewStatus;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void mouseClicked(MouseEvent e) {
         
-        if(e.getSource()== Salad){
-            String name = "Salad";
-            int price = 10;
+        if(e.getSource()== BonelessWings){
+            String name = "BonelessWings";
+            double price = 10.00;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
-            int total_Price = price * quantity;
+            double total_Price = price * quantity;
             
             model = (DefaultTableModel)jTable1.getModel();
             model.addRow(new Object[]{
@@ -644,11 +1496,11 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Soup){
-            String name = "Soup";
-            int price = 8;
+            else if(e.getSource()== OnionRings){
+            String name = "OnionRings";
+            double price = 8.00;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
-            int total_Price = price * quantity;
+            double total_Price = price * quantity;
             
             model = (DefaultTableModel)jTable1.getModel();
             model.addRow(new Object[]{
@@ -659,11 +1511,11 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Pizza){
-            String name = "Pizza";
-            int price = 15;
+            else if(e.getSource()== Mozzarella){
+            String name = "MozzarellaSticks";
+            double price = 6.00;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
-            int total_Price = price * quantity;
+            double total_Price = price * quantity;
             
             model = (DefaultTableModel)jTable1.getModel();
             model.addRow(new Object[]{
@@ -674,11 +1526,11 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Chicken){
-            String name = "Chicken";
-            int price = 12;
+            else if(e.getSource()== Tacos){
+            String name = "ChickenTacos";
+            double price = 8.00;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
-            int total_Price = price * quantity;
+            double total_Price = price * quantity;
             
             model = (DefaultTableModel)jTable1.getModel();
             model.addRow(new Object[]{
@@ -689,11 +1541,11 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Cookie){
-            String name = "Cookie";
-            int price = 3;
+            else if(e.getSource()== Pretzels){
+            String name = "Pretzels";
+            double price = 14.00;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
-            int total_Price = price * quantity;
+            double total_Price = price * quantity;
             
             model = (DefaultTableModel)jTable1.getModel();
             model.addRow(new Object[]{
@@ -704,11 +1556,283 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
             });
             
         }
-            else if(e.getSource()== Soda){
-            String name = "Soda";
-            int price = 2;
+            else if(e.getSource()== Spinach){
+            String name = "Spinach";
+            double price = 12.00;
             int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
-            int total_Price = price * quantity;
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            
+            else if(e.getSource()== Meatball){
+            String name = "MeatballSpaghetti";
+            double price = 15.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== C_Alfredo){
+            String name = "ChickenAlfredo";
+            double price = 12.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== S_Alfredo){
+            String name = "ShrimpAlfredo";
+            double price = 12.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Penne){
+            String name = "Penne";
+            double price = 13.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== MacNCheese){
+            String name = "MacNCheese";
+            double price = 11.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Carbonara){
+            String name = "Carbonara";
+            double price = 13.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+             
+            else if(e.getSource()== S_TopSirloin){
+            String name = "6OZ TopSirloin";
+            double price = 20.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== E_TopSirloin){
+            String name = "8OZ TopSirloin";
+            double price = 22.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== ShrimpSirloin){
+            String name = "ShrimpSirloin";
+            double price = 24.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Riblet){
+            String name = "Riblet";
+            double price = 19.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== Bourbon){
+            String name = "Bourbon";
+            double price = 20.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+            else if(e.getSource()== DoubleRibs){
+            String name = "DoubleRibs";
+            double price = 22.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== SoftDrinks){
+            String name = "SoftDrinks";
+            double price = 2.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== Lemonade){
+            String name = "Lemonade";
+            double price = 4.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== OrangeJuice){
+            String name = "OrangeJuice";
+            double price = 4.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== CheeseCake){
+            String name = "CheeseCake";
+            double price = 5.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== Brownie){
+            String name = "Brownie";
+            double price = 12.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]{
+                name,
+                price,
+                quantity,
+                total_Price
+            });
+            
+        }
+        else if(e.getSource()== Sundae){
+            String name = "Sundae";
+            double price = 15.00;
+            int quantity = Integer.parseInt((JOptionPane.showInputDialog("Enter the quantity")));
+            double total_Price = price * quantity;
             
             model = (DefaultTableModel)jTable1.getModel();
             model.addRow(new Object[]{
@@ -746,4 +1870,5 @@ public class FoodCategories extends javax.swing.JFrame implements MouseListener 
     public void mouseExited(MouseEvent arg0) {
         //To change body of generated methods, choose Tools | Templates.
     }
+
 }
