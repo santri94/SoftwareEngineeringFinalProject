@@ -42,6 +42,7 @@ public class Sales1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jScrollPane1.setBackground(new java.awt.Color(153, 255, 255));
         jScrollPane1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 255)));
         jScrollPane1.setForeground(new java.awt.Color(0, 102, 102));
 
